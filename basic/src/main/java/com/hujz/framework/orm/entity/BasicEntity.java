@@ -1,0 +1,222 @@
+package com.hujz.framework.orm.entity;
+
+import java.io.IOException;
+import java.io.Reader;
+import java.sql.Clob;
+import java.sql.SQLException;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Transient;
+
+import org.hibernate.annotations.GenericGenerator;
+
+import com.hujz.framework.orm.annotation.CreateTime;
+import com.hujz.framework.orm.annotation.UpdateTime;
+
+/**
+ *********************************************** 
+ * @Copyright (c) by ysc All right reserved.
+ * @Create Date: 2014-2-25 下午5:48:16
+ * @Create Author: hujz
+ * @File Name: BasicEntity
+ * @Function: hibernate映射实体类超类
+ * @Last version: 1.0
+ * @Last Update Date:
+ * @Change Log:
+ ************************************************* 
+ */
+@MappedSuperclass
+public abstract class BasicEntity extends SuperEntity{
+
+	/**
+	 * @Title serialVersionUID
+	 * @type long
+	 * @date 2014-2-25 下午5:42:00 
+	 * 含义 
+	 */
+	@Transient
+	private static final long serialVersionUID = -1464340211467283689L;
+	
+	@Id
+	@GenericGenerator(name = "uuidGenerator", strategy = "com.hujz.framework.orm.hibernate.identifier.UuidGenerator")
+	@GeneratedValue(generator = "uuidGenerator")
+	@Column(length = 32, unique = true, nullable = false)
+	private String id;
+
+	/**
+	 * @Title createId
+	 * @type String
+	 * @date 2014-2-25 下午5:47:27 
+	 * 含义 创建人
+	 */
+	@Column(updatable=false)
+	private String createUserId;
+
+	/**
+	 * @Title created
+	 * @type Date
+	 * @date 2014-2-24 下午12:49:24 
+	 * 含义 创建时间
+	 */
+	@Column(updatable=false)
+	@CreateTime
+	private Date createTime;
+	
+	/**
+	 * @Title modifieId
+	 * @type String
+	 * @date 2014-2-25 下午5:47:34 
+	 * 含义 修改人
+	 */
+	@Column
+	private String updateUserId;
+
+	/**
+	 * @Title modified
+	 * @type Date
+	 * @date 2014-2-24 下午12:49:35 
+	 * 含义 最后一次修改时间
+	 */
+	@Column
+	@UpdateTime
+	private Date updateTime;
+	
+	/**
+	 * @Title isDelete
+	 * @type Integer
+	 * @date 2015年9月16日 下午1:55:05
+	 * 含义 删除标识0未删，1 删除
+	 */
+	@Column
+	private Integer isDelete;
+	
+	/**
+	 * id的获取.
+	 * @return String
+	 */
+	public String getId() {
+		return (id == null || "".equals(id.trim())) ? null : id;
+	}
+
+	/**
+	 * 设定id的值.
+	 * @param String
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	/**
+	 * createUserId的获取.
+	 * @return String
+	 */
+	public String getCreateUserId() {
+		return createUserId;
+	}
+
+	/**
+	 * 设定createUserId的值.
+	 * @param String
+	 */
+	public void setCreateUserId(String createUserId) {
+		this.createUserId = createUserId;
+	}
+
+	/**
+	 * createTime的获取.
+	 * @return Date
+	 */
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	/**
+	 * 设定createTime的值.
+	 * @param Date
+	 */
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	/**
+	 * updateUserId的获取.
+	 * @return String
+	 */
+	public String getUpdateUserId() {
+		return updateUserId;
+	}
+
+	/**
+	 * 设定updateUserId的值.
+	 * @param String
+	 */
+	public void setUpdateUserId(String updateUserId) {
+		this.updateUserId = updateUserId;
+	}
+
+	/**
+	 * updateTime的获取.
+	 * @return Date
+	 */
+	public Date getUpdateTime() {
+		return updateTime;
+	}
+
+	/**
+	 * 设定updateTime的值.
+	 * @param Date
+	 */
+	public void setUpdateTime(Date updateTime) {
+		this.updateTime = updateTime;
+	}
+	
+	/**
+	 * isDelete的获取.
+	 * @return Integer
+	 */
+	public Integer getIsDelete() {
+		return isDelete;
+	}
+
+	/**
+	 * 设定isDelete的值.
+	 * @param Integer
+	 */
+	public void setIsDelete(Integer isDelete) {
+		this.isDelete = isDelete;
+	}
+
+	/**
+     * @Project SC
+     * @Package com.hujz.framework.orm.hibernate.model
+     * @Method clobToString方法.<br>
+     * @Description java.sql.Clob 转化为String的方法
+     * @author 胡久洲
+     * @date 2014年8月21日 上午11:12:37
+     * @param clob
+     * @return
+     */
+    public String clobToString(Clob clob) {
+        if (clob == null) {
+            return null;
+        }
+        try {
+            Reader inStreamDoc = clob.getCharacterStream();
+
+            char[] tempDoc = new char[(int) clob.length()];
+            inStreamDoc.read(tempDoc);
+            inStreamDoc.close();
+            return new String(tempDoc);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException es) {
+            es.printStackTrace();
+        }
+
+        return null;
+    }
+}
