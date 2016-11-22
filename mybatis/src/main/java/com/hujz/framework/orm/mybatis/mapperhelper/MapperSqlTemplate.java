@@ -33,6 +33,8 @@ import org.apache.ibatis.scripting.xmltags.SqlNode;
 import org.apache.ibatis.scripting.xmltags.StaticTextSqlNode;
 import org.apache.ibatis.scripting.xmltags.TextSqlNode;
 
+import com.hujz.framework.orm.mybatis.util.StringUtil;
+
 
 /**
  * 通用Mapper模板类，扩展通用Mapper时需要继承该类
@@ -45,18 +47,9 @@ public abstract class MapperSqlTemplate extends MapperTemplate{
 		super(mapperClass, mapperHelper);
 	}
     
-    /**
-     * 将Condition转换为where条件
-     * @Project mybatis
-     * @Package com.hujz.framework.orm.mybatis.mapperhelper
-     * @Method resolveQueryConditionToSql方法.<br>
-     * @Description TODO(用一句话描述该类做什么)
-     * @author 胡久洲
-     * @date 2015年9月11日 下午6:31:21
-     * @return
-     */
     public String resolveQueryConditionToSql(String tableName) {
     	String field = "${@"+EntityHelper.class.getName()+"@getColumnByProperty(\""+ tableName + "\",%s)}";
+    	String toBetween = "${@"+StringUtil.class.getName()+"@toBetween(%s)}";
     	StringBuilder sql = new StringBuilder()
     		.append("<where>")
 	    	.append(" <if test=\"likeEqualsMap != null\">")
@@ -65,13 +58,11 @@ public abstract class MapperSqlTemplate extends MapperTemplate{
 			.append(" ").append(String.format(field,"key")).append(" like '%${value}%'")
 			.append(" </foreach> ")
 			.append(" </if> ")
-			
 			.append(" <if test=\"equalsMap != null\"> ")
 			.append(" <foreach collection=\"equalsMap\" index=\"key\"  item=\"value\" separator=\"and\" open=\" and \" close=\"\"> ")
 			.append(" ").append(String.format(field,"key")).append(" = #{value} ")
 			.append(" </foreach> ")
 			.append(" </if> ")
-			
 			.append(" <if test=\"notEqualsMap != null\"> ")
 			.append(" <foreach collection=\"notEqualsMap\" index=\"key\"  item=\"value\" separator=\"and\" open=\" and \" close=\"\"> ")
 			.append(" ").append(String.format(field,"key")).append(" != #{value} ")
@@ -121,6 +112,13 @@ public abstract class MapperSqlTemplate extends MapperTemplate{
 			.append(" </foreach> ")
 			.append(" </foreach> ")
 			.append(" </if> ")
+			
+			.append(" <if test=\"betweenInMap != null\"> ")
+			.append(" <foreach collection=\"betweenInMap\" index=\"key\"  item=\"value\" separator=\"and\" open=\" and \" close=\"\"> ")
+			.append(" ").append(String.format(field,"key")).append(" between ").append(String.format(toBetween,"value"))
+			.append(" </foreach> ")
+			.append(" </if> ")
+			
 			.append("</where>")
 			.append(" <if test=\"orderby != null\"> ")
 			.append(" order by ")

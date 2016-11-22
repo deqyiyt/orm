@@ -78,4 +78,12 @@ public class StringUtil extends com.hujz.soasoft.util.type.StringUtil{
         }
         return c;
     }
+    
+    public static String toBetween(String item) {
+    	if(isNotBlank(item)) {
+    		return "'" + item.replace("_", "' and '") + "'";
+    	} else {
+    		return item;
+    	}
+    }
 }
