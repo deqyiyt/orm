@@ -11,6 +11,7 @@
 		<module>hibernate</module>
 		<module>mybatis</module>
 		<module>basic</module>
+		<module>spring-boot-example</module>
 	</modules>
 	<properties>
 		<orm.version>1.0.0-SNAPSHOT</orm.version>
@@ -24,7 +25,7 @@
 		<javassist.version>3.18.1-GA</javassist.version>
 		<mybatis.spring.version>1.2.0</mybatis.spring.version>
 		<mybatis.version>3.2.8</mybatis.version>
-		<validation.api.version>1.0.0.GA</validation.api.version>
+		<validation.api.version>1.1.0.Final</validation.api.version>
 		<persistence.api.verstion>1.0</persistence.api.verstion>
 		<slf4j.verstion>1.7.21</slf4j.verstion>
 		<logback.version>1.1.7</logback.version>

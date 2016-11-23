@@ -24,8 +24,6 @@ import org.apache.ibatis.type.TypeHandlerRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import test.dao.SysUserDaoTest;
-
 /**
  * MyBatis 性能拦截器，用于输出每条 SQL 语句及其执行时间
  *
