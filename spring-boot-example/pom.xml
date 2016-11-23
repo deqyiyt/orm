@@ -8,6 +8,7 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	
+	<groupId>com.hujz.framework.module.orm.example</groupId>
 	<artifactId>spring-boot-example</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<modelVersion>4.0.0</modelVersion>
