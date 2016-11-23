@@ -18,10 +18,8 @@ import com.hujz.framework.orm.hibernate.impl.HibernateGenericDao;
  */
 /**
  *********************************************** 
- * @Copyright (c) by soap All right reserved.
  * @Create Date: 2014-2-24 下午2:09:45
- * @Create Author: hujz
- * @File Name: LaziHibernateGenericDao
+ * @Create Author: jiuzhou.hu
  * @Function: hibernate公共dao超类实现
  * @Last version: 1.0
  * @Last Update Date:

@@ -25,11 +25,11 @@ import org.apache.ibatis.scripting.defaults.DefaultParameterHandler;
 import com.hujz.framework.orm.bean.PageTools;
 import com.hujz.framework.orm.mybatis.pagehelper.Dialect;
 import com.hujz.framework.orm.mybatis.pagehelper.SqlUtil;
-import com.hujz.framework.orm.mybatis.pagehelper.StringUtil;
 import com.hujz.framework.orm.mybatis.pagehelper.parser.SqlParser;
 import com.hujz.framework.orm.mybatis.pagehelper.parser.SqlServer;
+import com.hujz.framework.orm.mybatis.util.StringUtil;
+import com.hujz.framework.orm.util.ObjectUtils;
 import com.hujz.framework.orm.util.QueryCondition;
-import com.hujz.soasoft.util.type.ObjectUtil;
 
 /**
  * 
@@ -73,7 +73,7 @@ public class PageInterceptor implements Interceptor {
        //是通过Interceptor的plugin方法进行包裹的，所以我们这里拦截到的目标对象肯定是RoutingStatementHandler对象。
        RoutingStatementHandler handler = (RoutingStatementHandler) invocation.getTarget();
        //通过反射获取到当前RoutingStatementHandler对象的delegate属性
-       StatementHandler delegate = (StatementHandler)ObjectUtil.getFieldValue(handler, "delegate");
+       StatementHandler delegate = (StatementHandler)ObjectUtils.getFieldValue(handler, "delegate");
        //获取到当前StatementHandler的 boundSql，这里不管是调用handler.getBoundSql()还是直接调用delegate.getBoundSql()结果是一样的，因为之前已经说过了
        //RoutingStatementHandler实现的所有StatementHandler接口方法里面都是调用的delegate对应的方法。
        BoundSql boundSql = delegate.getBoundSql();
@@ -81,7 +81,7 @@ public class PageInterceptor implements Interceptor {
        Object obj = boundSql.getParameterObject();
        
        //通过反射获取delegate父类BaseStatementHandler的mappedStatement属性
-       MappedStatement mappedStatement = (MappedStatement)ObjectUtil.getFieldValue(delegate, "mappedStatement");
+       MappedStatement mappedStatement = (MappedStatement)ObjectUtils.getFieldValue(delegate, "mappedStatement");
        
        //这里我们简单的通过传入的是Page对象就认定它是需要进行分页操作的。
        PageTools pageTools = proccessPage(obj, mappedStatement);
@@ -97,7 +97,7 @@ public class PageInterceptor implements Interceptor {
            //获取分页Sql语句
            String pageSql = this.getPageSql(pageTools, sql);
            //利用反射设置当前BoundSql对应的sql属性为我们建立好的分页Sql语句
-           ObjectUtil.setFieldValue(boundSql, "sql", pageSql);
+           ObjectUtils.setFieldValue(boundSql, "sql", pageSql);
        }
        return invocation.proceed();
     }

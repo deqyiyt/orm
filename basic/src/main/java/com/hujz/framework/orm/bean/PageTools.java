@@ -4,9 +4,8 @@ import java.io.Serializable;
 
 /**
  *********************************************** 
- * @Copyright (c) by soap All right reserved.
  * @Create Date: 2015年9月12日 下午12:57:21
- * @Create Author: hujiuzhou
+ * @Create Author: jiuzhou.hu
  * @File Name: PageTools
  * @Function: 封装分页参数.
  * @Last version: 1.0

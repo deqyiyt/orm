@@ -21,8 +21,10 @@ import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.type.TypeHandlerRegistry;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import com.hujz.soasoft.util.log.LogUtil;
+import test.dao.SysUserDaoTest;
 
 /**
  * MyBatis 性能拦截器，用于输出每条 SQL 语句及其执行时间
@@ -35,7 +37,9 @@ import com.hujz.soasoft.util.log.LogUtil;
         @Signature(type = Executor.class, method = "update", args = {MappedStatement.class, Object.class})
 })
 public class PerformanceInterceptor implements Interceptor {
-
+	
+	private Logger log = LoggerFactory.getLogger(PerformanceInterceptor.class);
+	
     private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Override
@@ -57,7 +61,7 @@ public class PerformanceInterceptor implements Interceptor {
 
         long end = System.currentTimeMillis();
         long timing = end - start;
-        LogUtil.writeLog("intercept", "\nid:" + statementId + " - Sql（耗时 "+timing+" ms）:" + sql);
+        log.debug("\nid:" + statementId + " - Sql（耗时 "+timing+" ms）:" + sql);
         return result;
     }
 

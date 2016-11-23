@@ -4,14 +4,11 @@ import com.hujz.framework.orm.mybatis.entity.Example;
 
 /**
  * OGNL静态方法
- *
- * @author liuzh
  */
 public abstract class OGNL {
 
     /**
      * 是否包含自定义查询列
-     *
      * @param parameter
      * @return
      */
@@ -27,7 +24,6 @@ public abstract class OGNL {
 
     /**
      * 不包含自定义查询列
-     *
      * @param parameter
      * @return
      */

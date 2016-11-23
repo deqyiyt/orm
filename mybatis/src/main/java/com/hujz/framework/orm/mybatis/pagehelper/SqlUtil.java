@@ -24,9 +24,13 @@
 
 package com.hujz.framework.orm.mybatis.pagehelper;
 
-import com.hujz.framework.orm.mybatis.pagehelper.parser.Parser;
-import com.hujz.framework.orm.mybatis.pagehelper.parser.impl.AbstractParser;
-import com.hujz.framework.orm.mybatis.pagehelper.sqlsource.*;
+import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import java.util.concurrent.ConcurrentHashMap;
+
 import org.apache.ibatis.builder.StaticSqlSource;
 import org.apache.ibatis.builder.annotation.ProviderSqlSource;
 import org.apache.ibatis.mapping.BoundSql;
@@ -39,12 +43,14 @@ import org.apache.ibatis.scripting.defaults.RawSqlSource;
 import org.apache.ibatis.scripting.xmltags.DynamicSqlSource;
 import org.apache.ibatis.session.RowBounds;
 
-import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import java.util.concurrent.ConcurrentHashMap;
+import com.hujz.framework.orm.mybatis.pagehelper.parser.Parser;
+import com.hujz.framework.orm.mybatis.pagehelper.parser.impl.AbstractParser;
+import com.hujz.framework.orm.mybatis.pagehelper.sqlsource.PageDynamicSqlSource;
+import com.hujz.framework.orm.mybatis.pagehelper.sqlsource.PageProviderSqlSource;
+import com.hujz.framework.orm.mybatis.pagehelper.sqlsource.PageRawSqlSource;
+import com.hujz.framework.orm.mybatis.pagehelper.sqlsource.PageSqlSource;
+import com.hujz.framework.orm.mybatis.pagehelper.sqlsource.PageStaticSqlSource;
+import com.hujz.framework.orm.mybatis.util.StringUtil;
 
 /**
  * Mybatis - sql工具，获取分页和count的MappedStatement，设置分页参数

@@ -5,7 +5,6 @@ import com.alibaba.druid.filter.config.ConfigTools;
 
 /**
  *********************************************** 
- * @Copyright (c) by soap All right reserved.
  * @Create Date: 2016年1月6日 下午4:22:45
  * @Create Author: jiuzhou.hu@baozun.cn
  * @File Name: DruidDecryptTest

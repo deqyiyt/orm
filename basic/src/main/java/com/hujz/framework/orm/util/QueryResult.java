@@ -11,9 +11,8 @@ import java.util.ListIterator;
 import com.hujz.framework.orm.bean.PageTools;
 /**
  *********************************************** 
- * @Copyright (c) by ysc All right reserved.
  * @Create Date: 2014-2-24 下午2:12:02
- * @Create Author: hujz
+ * @Create Author: jiuzhou.hu
  * @File Name: QueryResult
  * @Function: 查询结果保存
  * @Last version: 1.0

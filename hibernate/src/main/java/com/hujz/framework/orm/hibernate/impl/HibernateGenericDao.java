@@ -25,9 +25,8 @@ import com.hujz.framework.orm.util.QueryCondition;
  */
 /**
  *********************************************** 
- * @Copyright (c) by ysc All right reserved.
  * @Create Date: 2014-2-24 下午2:09:45
- * @Create Author: hujz
+ * @Create Author: jiuzhou.hu
  * @File Name: HibernateGenericDao
  * @Function: hibernate公共dao超类实现
  * @Last version: 1.0
@@ -39,11 +38,7 @@ public abstract class HibernateGenericDao<T, PK extends Serializable> implements
 	
 	/**
 	 * 获得注入的持久类
-	 * @Project pd-framework
-	 * @Package com.hujz.framework.common.dao
-	 * @Method getClassType方法.<br>
-	 * @Description 
-	 * @author 胡久洲
+	 * @author jiuzhou.hu
 	 * @date 2014-3-24 下午2:55:37
 	 * @param index
 	 * @return
@@ -62,12 +57,7 @@ public abstract class HibernateGenericDao<T, PK extends Serializable> implements
 
 	/**
 	 * 保存或者更新对象
-	 * @Project pd-framework
-	 * @Package com.hujz.sb.framework.common.dao
-	 * @see com.hujz.sb.framework.dao.GenericDao#saveOrUpdate(java.lang.Object)
-	 * @Method saveOrUpdate方法.<br>
-	 * @Description 
-	 * @author 胡久洲
+	 * @author jiuzhou.hu
 	 * @date 2014-3-24 下午2:58:58
 	 * @param object
 	 */
@@ -78,12 +68,7 @@ public abstract class HibernateGenericDao<T, PK extends Serializable> implements
 	
 	/**
 	 * 批量新增或修改
-	 * @Project pd-framework
-	 * @Package com.hujz.sb.framework.common.dao
-	 * @see com.hujz.sb.framework.dao.GenericDao#saveOrUpdateAll(java.util.List)
-	 * @Method saveOrUpdateAll方法.<br>
-	 * @Description 
-	 * @author 胡久洲
+	 * @author jiuzhou.hu
 	 * @date 2014-3-24 下午2:59:07
 	 * @param list
 	 */
@@ -96,14 +81,9 @@ public abstract class HibernateGenericDao<T, PK extends Serializable> implements
 
 	/**
 	 * 获取当前对象里的所有记录
-	 * @Project pd-framework
-	 * @Package com.hujz.sb.framework.common.dao
-	 * @see com.hujz.sb.framework.dao.GenericDao#queryAll()
-	 * @Method queryAll方法.<br>
-	 * @Description 
-	 * @author 胡久洲
+	 * @author jiuzhou.hu
 	 * @date 2014-3-24 下午2:59:33
-	 * @return
+	 * @return List
 	 */
 	@Override
 	public List<T> queryAll() {

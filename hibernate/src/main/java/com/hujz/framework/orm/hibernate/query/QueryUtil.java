@@ -14,12 +14,12 @@ import org.hibernate.type.Type;
 
 import com.hujz.framework.orm.bean.OrderEntry;
 import com.hujz.framework.orm.bean.PageTools;
+import com.hujz.framework.orm.util.NumberUtil;
+import com.hujz.framework.orm.util.ObjectUtils;
 import com.hujz.framework.orm.util.QueryCondition;
-import com.hujz.soasoft.util.RandomUtils;
-import com.hujz.soasoft.util.type.NumberUtil;
-import com.hujz.soasoft.util.type.ObjectUtil;
-import com.hujz.soasoft.util.type.StringUtil;
-import com.hujz.soasoft.util.type.TimeUtil;
+import com.hujz.framework.orm.util.RandomUtils;
+import com.hujz.framework.orm.util.StringUtils;
+import com.hujz.framework.orm.util.TimeUtils;
 
 public class QueryUtil {
 	
@@ -39,7 +39,6 @@ public class QueryUtil {
 	 * 添加分页
 	 * @Title: setQueryPage
 	 * @author hjz
-	 * @Description: TODO(这里用一句话描述这个方法的作用)
 	 * @param 设定文件
 	 * @return 返回类型
 	 */
@@ -105,10 +104,10 @@ public class QueryUtil {
     	if(qc.getEntry()!=null){
 	    	Class<?> dtoClass = qc.getEntry().getClass();
 			Field[] fields = dtoClass.getDeclaredFields();
-			String objectAlias = ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
+			String objectAlias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
 			for (short i = 0; i < fields.length; i++) {
 				String fieldName = fields[i].getName();
-				Object value = ObjectUtil.getProperty(qc.getEntry(), fieldName);
+				Object value = ObjectUtils.getProperty(qc.getEntry(), fieldName);
 				if (value == null) {
 					continue;
 				} else{
@@ -128,7 +127,6 @@ public class QueryUtil {
      * 拼接排序语句
      * @Title: addOrderby
      * @author hjz
-     * @Description: TODO(这里用一句话描述这个方法的作用)
      * @param 设定文件
      * @return 返回类型
      */
@@ -141,7 +139,7 @@ public class QueryUtil {
             for(int i = 0; i < orderList.size(); i++) {
                 OrderEntry orderEntry = (OrderEntry)orderList.get(i);
                 String orderKey = (String)orderEntry.getKey();
-                if(StringUtil.empty(orderKey)) {
+                if(StringUtils.isEmpty(orderKey)) {
                     continue;
                 }
                 if(i > 0) {
@@ -168,9 +166,7 @@ public class QueryUtil {
 
     /**
      * 小于开始值或者大于结束值
-     * @Title: addNotBetweenIn
      * @author hjz
-     * @Description: TODO(这里用一句话描述这个方法的作用)
      * @param 设定文件
      * @return 返回类型
      */
@@ -179,14 +175,14 @@ public class QueryUtil {
         Map<String, Object> notBetweenMap = qc.getNotBetweenInMap();
         //
         if(null != notBetweenMap && notBetweenMap.size() > 0) {
-        	String objectAlias = ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
+        	String objectAlias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
             for(Iterator<Map.Entry<String, Object>> it = notBetweenMap
                     .entrySet().iterator(); it.hasNext();) {
                 Map.Entry<String, Object> entry = (Map.Entry<String, Object>)it
                         .next();
                 String condKey = entry.getKey();
                 Object condVal = entry.getValue();
-                Object[] condVals = StringUtil.split((String)condVal, "_");
+                Object[] condVals = StringUtils.split((String)condVal, "_");
                 if(null != condVal) {
 					String alist = condKey + RandomUtils.getRandomValue(5);
 					String alistEnd = condKey + RandomUtils.getRandomValue(5);
@@ -205,9 +201,7 @@ public class QueryUtil {
 
     /**
      * 大于等于某个值并且小于等于另外一个值
-     * @Title: addBetweenIn
      * @author hjz
-     * @Description: TODO(这里用一句话描述这个方法的作用)
      * @param 设定文件
      * @return 返回类型
      */
@@ -215,14 +209,14 @@ public class QueryUtil {
         Map<String, Object> betweenMap = qc.getBetweenInMap();
         //
         if(null != betweenMap && betweenMap.size() > 0) {
-        	String objectAlias = ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
+        	String objectAlias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
             for(Iterator<Map.Entry<String, Object>> it = betweenMap.entrySet()
                     .iterator(); it.hasNext();) {
                 Map.Entry<String, Object> entry = (Map.Entry<String, Object>)it
                         .next();
                 String condKey = entry.getKey();
                 Object condVal = entry.getValue();
-                Object[] condVals = StringUtil.split((String)condVal, "_");
+                Object[] condVals = StringUtils.split((String)condVal, "_");
                 if(null != condVal) {
 					String alist = condKey + RandomUtils.getRandomValue(5);
 					String alistEnd = condKey + RandomUtils.getRandomValue(5);
@@ -240,9 +234,7 @@ public class QueryUtil {
 
     /**
      * 不等于列表中的任意一个值
-     * @Title: addNotIn
      * @author hjz
-     * @Description: TODO(这里用一句话描述这个方法的作用)
      * @param 设定文件
      * @return 返回类型
      */
@@ -250,7 +242,7 @@ public class QueryUtil {
         Map<String, List<Object>> notInMap = qc.getNotInMap();
         //
         if(null != notInMap && notInMap.size() > 0) {
-        	String objectAlias = ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
+        	String objectAlias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
             for(Iterator<Map.Entry<String, List<Object>>> it = notInMap
                     .entrySet().iterator(); it.hasNext();) {
                 Map.Entry<String, List<Object>> entry = (Map.Entry<String, List<Object>>)it
@@ -277,9 +269,7 @@ public class QueryUtil {
 
     /**
      * 等于列表中的某个值
-     * @Title: addIn
      * @author hjz
-     * @Description: TODO(这里用一句话描述这个方法的作用)
      * @param 设定文件
      * @return 返回类型
      */
@@ -287,7 +277,7 @@ public class QueryUtil {
         Map<String, List<Object>> inMap = qc.getInMap();
         //
         if(null != inMap && inMap.size() > 0) {
-        	String objectAlias = ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
+        	String objectAlias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
             for(Iterator<Map.Entry<String, List<Object>>> it = inMap.entrySet()
                     .iterator(); it.hasNext();) {
                 Map.Entry<String, List<Object>> entry = (Map.Entry<String, List<Object>>)it
@@ -314,9 +304,7 @@ public class QueryUtil {
 
     /**
      * 值非空
-     * @Title: addNotNull
      * @author hjz
-     * @Description: TODO(这里用一句话描述这个方法的作用)
      * @param 设定文件
      * @return 返回类型
      */
@@ -325,7 +313,7 @@ public class QueryUtil {
         Map<String, Object> notNullMap = qc.getNotNullMap();
         //
         if(null != notNullMap && notNullMap.size() > 0) {
-        	String objectAlias = ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
+        	String objectAlias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
             for(Iterator<Map.Entry<String, Object>> it = notNullMap.entrySet()
                     .iterator(); it.hasNext();) {
                 Map.Entry<String, Object> entry = (Map.Entry<String, Object>)it
@@ -350,9 +338,7 @@ public class QueryUtil {
 
     /**
      * 值为空
-     * @Title: addNull
      * @author hjz
-     * @Description: TODO(这里用一句话描述这个方法的作用)
      * @param 设定文件
      * @return 返回类型
      */
@@ -361,7 +347,7 @@ public class QueryUtil {
         Map<String, Object> nullMap = qc.getNullMap();
         //
         if(null != nullMap && nullMap.size() > 0) {
-        	String objectAlias = ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
+        	String objectAlias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
             for(Iterator<Map.Entry<String, Object>> it = nullMap.entrySet()
                     .iterator(); it.hasNext();) {
                 Map.Entry<String, Object> entry = (Map.Entry<String, Object>)it
@@ -386,9 +372,7 @@ public class QueryUtil {
 
     /**
      * 小于等于
-     * @Title: addLessEquals
      * @author hjz
-     * @Description: TODO(这里用一句话描述这个方法的作用)
      * @param 设定文件
      * @return 返回类型
      */
@@ -397,7 +381,7 @@ public class QueryUtil {
         Map<String, Object> lessEqualsMap = qc.getLessEqualsMap();
         //
         if(null != lessEqualsMap && lessEqualsMap.size() > 0) {
-        	String objectAlias = ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
+        	String objectAlias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
             for(Iterator<Map.Entry<String, Object>> it = lessEqualsMap
                     .entrySet().iterator(); it.hasNext();) {
                 Map.Entry<String, Object> entry = (Map.Entry<String, Object>)it
@@ -419,9 +403,7 @@ public class QueryUtil {
 
     /**
      * 小于
-     * @Title: addLess
      * @author hjz
-     * @Description: TODO(这里用一句话描述这个方法的作用)
      * @param 设定文件
      * @return 返回类型
      */
@@ -430,7 +412,7 @@ public class QueryUtil {
         Map<String, Object> lessMap = qc.getLessMap();
         //
         if(null != lessMap && lessMap.size() > 0) {
-        	String objectAlias = ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
+        	String objectAlias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
             for(Iterator<Map.Entry<String, Object>> it = lessMap.entrySet()
                     .iterator(); it.hasNext();) {
                 Map.Entry<String, Object> entry = (Map.Entry<String, Object>)it
@@ -452,9 +434,7 @@ public class QueryUtil {
 
     /**
      * 大于等于
-     * @Title: addGreateEquals
      * @author hjz
-     * @Description: TODO(这里用一句话描述这个方法的作用)
      * @param 设定文件
      * @return 返回类型
      */
@@ -463,7 +443,7 @@ public class QueryUtil {
         Map<String, Object> greatEqualsMap = qc.getGreateEqualsMap();
         //
         if(null != greatEqualsMap && greatEqualsMap.size() > 0) {
-        	String objectAlias = ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
+        	String objectAlias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
             for(Iterator<Map.Entry<String, Object>> it = greatEqualsMap
                     .entrySet().iterator(); it.hasNext();) {
                 Map.Entry<String, Object> entry = (Map.Entry<String, Object>)it
@@ -485,9 +465,7 @@ public class QueryUtil {
 
     /**
      * 大于
-     * @Title: addGreate
      * @author hjz
-     * @Description: TODO(这里用一句话描述这个方法的作用)
      * @param 设定文件
      * @return 返回类型
      */
@@ -496,7 +474,7 @@ public class QueryUtil {
         Map<String, Object> greatMap = qc.getGreateMap();
         //
         if(null != greatMap && greatMap.size() > 0) {
-        	String objectAlias = ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
+        	String objectAlias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
             for(Iterator<Map.Entry<String, Object>> it = greatMap.entrySet()
                     .iterator(); it.hasNext();) {
                 Map.Entry<String, Object> entry = (Map.Entry<String, Object>)it
@@ -518,9 +496,7 @@ public class QueryUtil {
     
     /**
      * 不等于
-     * @Title: addNotEquals
      * @author hjz
-     * @Description: TODO(这里用一句话描述这个方法的作用)
      * @param 设定文件
      * @return 返回类型
      */
@@ -529,7 +505,7 @@ public class QueryUtil {
         Map<String, Object> notEqualsMap = qc.getNotEqualsMap();
         //
         if(null != notEqualsMap && notEqualsMap.size() > 0) {
-        	String objectAlias = ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
+        	String objectAlias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
             for(Iterator<Map.Entry<String, Object>> it = notEqualsMap
                     .entrySet().iterator(); it.hasNext();) {
                 Map.Entry<String, Object> entry = (Map.Entry<String, Object>)it
@@ -551,9 +527,7 @@ public class QueryUtil {
 
     /**
      * 等于
-     * @Title: addEquals
      * @author hjz
-     * @Description: TODO(这里用一句话描述这个方法的作用)
      * @param 设定文件
      * @return 返回类型
      */
@@ -562,7 +536,7 @@ public class QueryUtil {
         Map<String, Object> equalsMap = qc.getEqualsMap();
         //
         if(null != equalsMap && equalsMap.size() > 0) {
-        	String objectAlias = ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
+        	String objectAlias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
             for(Iterator<Map.Entry<String, Object>> it = equalsMap.entrySet()
                     .iterator(); it.hasNext();) {
                 Map.Entry<String, Object> entry = (Map.Entry<String, Object>)it
@@ -584,9 +558,7 @@ public class QueryUtil {
 
     /**
      * 模糊等于
-     * @Title: addLikeEquals
      * @author hjz
-     * @Description: TODO(这里用一句话描述这个方法的作用)
      * @param 设定文件
      * @return 返回类型
      */
@@ -595,7 +567,7 @@ public class QueryUtil {
         Map<String, Object> likeEqualsMap = qc.getLikeEqualsMap();
         //
         if(null != likeEqualsMap && likeEqualsMap.size() > 0) {
-        	String objectAlias = ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
+        	String objectAlias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
             for(Iterator<Map.Entry<String, Object>> it = likeEqualsMap
                     .entrySet().iterator(); it.hasNext();) {
                 Map.Entry<String, Object> entry = (Map.Entry<String, Object>)it
@@ -616,11 +588,7 @@ public class QueryUtil {
     
     /**
      * 根据hibernate配置的字段属性类型转换value值
-     * @Project SB
-     * @Package com.hujz.framework.orm.hibernate.query
-     * @Method getValue方法.<br>
-     * @Description TODO(用一句话描述该类做什么)
-     * @author 胡久洲
+     * @author jiuzhou.hu
      * @date 2013-9-12 下午2:23:55
      * @param type	hibernate配置的type类型
      * @param value	需要转换的值
@@ -630,21 +598,21 @@ public class QueryUtil {
     	Class<?> typeClass = type.getReturnedClass();
     	if(value == null){
     		return null;
-    	} else if(StringUtil.equals((value+"").toLowerCase(), "null")){
+    	} else if(StringUtils.equals((value+"").toLowerCase(), "null")){
     		return null;
     	} else if(typeClass == Date.class){
     		if(value instanceof Date){
     			Date date = (Date)value;
     			return new java.sql.Date(date.getTime());
     		}else{
-    			return new java.sql.Date(TimeUtil.toCalendar(value.toString()).getTimeInMillis());
+    			return new java.sql.Date(TimeUtils.toCalendar(value.toString()).getTimeInMillis());
     		}
     	} else if(typeClass == GregorianCalendar.class){
     		if(value instanceof Date){
     			Date date = (Date)value;
     			return new java.sql.Date(date.getTime());
     		}else{
-    			return new java.sql.Date(TimeUtil.toCalendar(value.toString()).getTimeInMillis());
+    			return new java.sql.Date(TimeUtils.toCalendar(value.toString()).getTimeInMillis());
     		}
     	} else if(typeClass == Integer.class){
     		return NumberUtil.toInt(value);

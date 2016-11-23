@@ -9,9 +9,8 @@ import com.hujz.framework.orm.mybatis.face.base.BaseUpdateMapper;
 
 /**
  *********************************************** 
- * @Copyright (c) by soap All right reserved.
  * @Create Date: 2015年9月9日 下午8:53:27
- * @Create Author: hujiuzhou
+ * @Create Author: 352deqyiyt@163.com
  * @File Name: BaseMapper
  * @Function: 通用Mapper接口,操作单个实体类的基本接口
  * @Last version: 1.0

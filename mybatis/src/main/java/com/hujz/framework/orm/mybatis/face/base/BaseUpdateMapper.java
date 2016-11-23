@@ -9,9 +9,8 @@ import com.hujz.framework.orm.mybatis.provider.base.BaseUpdateProvider;
 
 /**
  *********************************************** 
- * @Copyright (c) by soap All right reserved.
  * @Create Date: 2015年9月9日 下午8:55:29
- * @Create Author: hujiuzhou
+ * @Create Author: 352deqyiyt@163.com
  * @File Name: BaseUpdateMapper
  * @Function: 通用Mapper接口,修改单个实体类的基本接口
  * @Last version: 1.0
@@ -22,11 +21,7 @@ import com.hujz.framework.orm.mybatis.provider.base.BaseUpdateProvider;
 public interface BaseUpdateMapper<T, PK extends Serializable> extends BasicDao<T, PK>{
 	/**
 	 * 更新对象
-	 * @Project framework
-	 * @Package com.hujz.sb.framework.common.dao
-	 * @Method update方法.<br>
-	 * @Description TODO 
-	 * @author 胡久洲
+	 * @author 352deqyiyt@163.com
 	 * @date 2014-3-24 下午2:49:24
 	 * @param object
 	 */

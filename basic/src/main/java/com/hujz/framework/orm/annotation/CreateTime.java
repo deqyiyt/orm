@@ -7,9 +7,8 @@ import java.lang.annotation.Target;
 
 /**
  *********************************************** 
- * @Copyright (c) by soap All right reserved.
  * @Create Date: 2015年9月17日 下午4:20:02
- * @Create Author: hujiuzhou
+ * @Create Author: jiuzhou.hu
  * @File Name: CreateTime
  * @Function: 设置当前时间
  * @Last version: 1.0

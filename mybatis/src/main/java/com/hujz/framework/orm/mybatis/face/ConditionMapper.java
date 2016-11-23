@@ -8,9 +8,8 @@ import com.hujz.framework.orm.mybatis.face.condition.UpdateByConditionMapper;
 
 /**
  *********************************************** 
- * @Copyright (c) by soap All right reserved.
  * @Create Date: 2015年9月9日 下午8:50:55
- * @Create Author: hujiuzhou
+ * @Create Author: 352deqyiyt@163.com
  * @File Name: ConditionMapper
  * @Function: 通用Mapper接口,通过QueryCondition操作
  * @Last version: 1.0

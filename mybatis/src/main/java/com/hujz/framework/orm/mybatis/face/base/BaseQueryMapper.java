@@ -10,9 +10,8 @@ import com.hujz.framework.orm.mybatis.provider.base.BaseQueryProvider;
 
 /**
  *********************************************** 
- * @Copyright (c) by soap All right reserved.
  * @Create Date: 2015年9月9日 下午8:55:18
- * @Create Author: hujiuzhou
+ * @Create Author: 352deqyiyt@163.com
  * @File Name: BaseSelectMapper
  * @Function: 通用Mapper接口,查询单个实体类的基本接口
  * @Last version: 1.0
@@ -24,11 +23,7 @@ public interface BaseQueryMapper<T, PK extends Serializable> extends BasicDao<T,
 	
 	/**
 	 * 通过ID获取对象
-	 * @Project framework
-	 * @Package com.hujz.sb.framework.common.dao
-	 * @Method get方法.<br>
-	 * @Description TODO 
-	 * @author 胡久洲
+	 * @author 352deqyiyt@163.com
 	 * @date 2014-3-24 下午2:50:33
 	 * @param id
 	 * @return

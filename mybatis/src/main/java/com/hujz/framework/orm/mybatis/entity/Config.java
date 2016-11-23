@@ -5,7 +5,7 @@ import java.util.Properties;
 import com.hujz.framework.orm.mybatis.code.IdentityDialect;
 import com.hujz.framework.orm.mybatis.code.Style;
 import com.hujz.framework.orm.mybatis.util.StringUtil;
-import com.hujz.soasoft.util.type.TimeUtil;
+import com.hujz.framework.orm.util.TimeUtils;
 
 /**
  * 通用Mapper属性配置
@@ -159,7 +159,7 @@ public class Config {
 		if (StringUtil.isNotEmpty(this.NOW)) {
             return this.NOW;
         }
-        return "@"+TimeUtil.class.getName()+"@getSysTimestamp()";
+        return "@"+TimeUtils.class.getName()+"@getSysTimestamp()";
 	}
 
 	/**

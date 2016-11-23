@@ -1,19 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>com.hujz.framework</groupId>
-		<artifactId>module</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
-	</parent>
 	<groupId>com.hujz.framework.module</groupId>
 	<artifactId>orm</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>Module Orm</name>
-	<url>http://www.yschome.com/</url>
+	<url>http://www.hujiuzhou.com/</url>
 	<packaging>pom</packaging>
 	<modules>
 		<module>hibernate</module>
 		<module>mybatis</module>
 		<module>basic</module>
 	</modules>
+	<properties>
+		<orm.version>1.0.0-SNAPSHOT</orm.version>
+		<spring.version>4.2.6.RELEASE</spring.version>
+		<hibernate.version>4.3.2.Final</hibernate.version>
+		<druid.version>1.0.2</druid.version>
+		<mysql.version>5.1.8</mysql.version>
+		<junit.version>4.12</junit.version>
+		<commons.codec.version>1.7</commons.codec.version>
+		<aspectjweaver.version>1.7.0</aspectjweaver.version>
+		<javassist.version>3.18.1-GA</javassist.version>
+		<mybatis.spring.version>1.2.0</mybatis.spring.version>
+		<mybatis.version>3.2.8</mybatis.version>
+		<validation.api.version>1.0.0.GA</validation.api.version>
+		<persistence.api.verstion>1.0</persistence.api.verstion>
+		<slf4j.verstion>1.7.21</slf4j.verstion>
+		<logback.version>1.1.7</logback.version>
+	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>${druid.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			
+			<!-- Hibernate/JPA -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>${hibernate.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>javax.xml.bind</groupId>
+						<artifactId>jaxb-api</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.sun.xml.bind</groupId>
+						<artifactId>jaxb-impl</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-ehcache</artifactId>
+				<version>${hibernate.version}</version>
+			</dependency>
+			
+			<!-- mybatis -->
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>${mybatis.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>${mybatis.spring.version}</version>
+			</dependency>
+			
+			<!-- spring -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.javassist</groupId>
+				<artifactId>javassist</artifactId>
+				<version>${javassist.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${aspectjweaver.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>${commons.codec.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.validation</groupId>
+				<artifactId>validation-api</artifactId>
+				<version>${validation.api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.persistence</groupId>
+				<artifactId>persistence-api</artifactId>
+				<version>${persistence.api.verstion}</version>
+			</dependency> 
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>log4j-over-slf4j</artifactId>
+				<version>${slf4j.verstion}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			
+			<!-- Test -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.hamcrest</groupId>
+				<artifactId>hamcrest-core</artifactId>
+				<version>1.3</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.version}</version>
+			</dependency>
+	
+			<!--集成其它组件 -->
+			<dependency>
+				<groupId>com.hujz.framework.module.orm</groupId>
+				<artifactId>orm-basic</artifactId>
+				<version>${orm.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<build>
+		<pluginManagement>
+            <plugins>
+				<plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <configuration>
+                        <argLine>-Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=256m
+                            -Dfile.encoding=UTF-8
+                        </argLine>
+                        <forkMode>always</forkMode>
+                        <useFile>false</useFile>
+                        <includes>
+                            <include>**/*Tests.java</include>
+                        </includes>
+                        <excludes>
+                            <exclude>**/Abstract*.java</exclude>
+                        </excludes>
+                        <junitArtifactName>junit:junit</junitArtifactName>
+                    </configuration>
+                </plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>

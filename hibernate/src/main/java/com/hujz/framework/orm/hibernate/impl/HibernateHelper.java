@@ -1,7 +1,3 @@
-/**
- *copyright(C)2009
- *大众科技有限公司 & Service Corporation All rights reserved
- */
 package com.hujz.framework.orm.hibernate.impl;
 
 import java.util.Collection;
@@ -21,64 +17,27 @@ import com.hujz.framework.orm.bean.OrderEntry;
 import com.hujz.framework.orm.bean.PageTools;
 import com.hujz.framework.orm.bean.QueryPropert;
 import com.hujz.framework.orm.hibernate.query.QueryUtil;
+import com.hujz.framework.orm.util.ObjectUtils;
 import com.hujz.framework.orm.util.QueryCondition;
 import com.hujz.framework.orm.util.QueryResult;
-import com.hujz.soasoft.util.RandomUtils;
-import com.hujz.soasoft.util.type.ObjectUtil;
-import com.hujz.soasoft.util.type.StringUtil;
+import com.hujz.framework.orm.util.RandomUtils;
+import com.hujz.framework.orm.util.StringUtils;
 
 /**
- *<b>系统名称:</b><b> &nbsp;&nbsp;&nbsp;&nbsp;
- * 
- *Hibernate通用Dao系统</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
- * 
- *<b>子系统名：</b><br>
- *&nbsp;&nbsp;&nbsp;&nbsp;
- * 
- *Hibernate通用条件类<br>
- * 
- *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
- * 
- *<b>文件名:</b><br>
- *&nbsp;&nbsp;&nbsp;&nbsp;
- * 
- *HibernateHelperNew.java<br>
- *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
- * 
- *<b>类名:</b><br>
- *&nbsp;&nbsp;&nbsp;&nbsp;
- * 
- *HibernateHelperNew类.<br>
- *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
- * 
- *<br>
- *<b>概要说明</b><br>
- *&nbsp;&nbsp;&nbsp;&nbsp;
- * 
- * 
- *HibernateHelperNew类的概要说明<br>
- **&nbsp;*&nbsp;*&nbsp;*&nbsp;*&nbsp;*&nbsp;*&nbsp;
- * 
- *1：根据QueryCondition组合HQl的条件<br>
- *2：通过Hibernate查询或修改或删除或保存实体对象<br>
- * 
- *<b>***History*** </b/><br>
- *更新年月日， 更改原因， 姓名， 更新内容<br>
- *2009-8-29, 99999, hujiuzhou@hotoa.com, 新建<br>
- * 
- *@author :hujiuzhou@hotoa.com
- *@since :2009-8-29
- *@version:1.0
+ *********************************************** 
+ * Hibernate通用Dao系统
+ * @Function:  1：根据QueryCondition组合HQl的条件<br>
+ *				2：通过Hibernate查询或修改或删除或保存实体对象<br>
+ * @Create Author: jiuzhou.hu
+ * @Last Update Date:
+ * @Change Log:
+ ************************************************* 
  */
 @SuppressWarnings({ "unchecked", "rawtypes" })
 public class HibernateHelper {
 	
     /**
-     * @Project SB
-     * @Package com.hujz.framework.orm.hibernate.impl
-     * @Method batchUpdateHqlByQueryCondition方法.<br>
-     * @Description TODO 执行批量编辑
-     * @author 胡久洲
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:17:32
      * @param session
      * @param clazz
@@ -89,7 +48,7 @@ public class HibernateHelper {
     	String hql = buildUpdateHql(metadata, qc);
         String condition = QueryUtil.buildConditionByQueryCondition(metadata, qc).toString();
         
-        if(!StringUtil.empty(condition) && condition.length() > 0) {
+        if(StringUtils.isNotEmpty(condition) && condition.length() > 0) {
             hql += " where 1 = 1 ";
             hql += condition;
         }
@@ -107,11 +66,8 @@ public class HibernateHelper {
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.framework.orm.hibernate.impl
-     * @Method batchDeleteHqlByQueryCondition方法.<br>
-     * @Description TODO 执行批量删除
-     * @author 胡久洲
+     * 执行批量删除
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:17:41
      * @param session
      * @param clazz
@@ -122,7 +78,7 @@ public class HibernateHelper {
     	String hql = buildDeleteHql(metadata);
         String condition = QueryUtil.buildConditionByQueryCondition(metadata, qc).toString();
         
-        if(!StringUtil.empty(condition) && condition.length() > 0) {
+        if(StringUtils.isNotEmpty(condition) && condition.length() > 0) {
             hql += " where 1 = 1 ";
             hql += condition;
         }
@@ -140,11 +96,8 @@ public class HibernateHelper {
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.framework.orm.hibernate.impl
-     * @Method selectDbSql方法.<br>
-     * @Description TODO 使用原生的标准数据库sql
-     * @author 胡久洲
+     * 使用原生的标准数据库sql
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:17:48
      * @param session
      * @param clazz
@@ -173,11 +126,8 @@ public class HibernateHelper {
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.framework.orm.hibernate.impl
-     * @Method selectHqlByQueryCondition方法.<br>
-     * @Description TODO Hql查询
-     * @author 胡久洲
+     * Hql查询
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:18:03
      * @param session
      * @param clazz
@@ -188,7 +138,7 @@ public class HibernateHelper {
     public static final void selectHqlByQueryCondition(Session session,
     		ClassMetadata metadata, QueryCondition qc, List qr)
             throws HibernateException {
-    	String alias = ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
+    	String alias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
         // 获取组合的条件
         String condition = QueryUtil.buildConditionByQueryCondition(metadata, qc).toString();
         StringBuffer hql = new StringBuffer(buildQueryHql(metadata, condition));
@@ -238,11 +188,8 @@ public class HibernateHelper {
     }
     
     /**
-     * @Project SB
-     * @Package com.hujz.framework.orm.hibernate.impl
-     * @Method selectHqlByQueryCondition方法.<br>
-     * @Description TODO Hql查询
-     * @author 胡久洲
+     * Hql查询
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:18:03
      * @param session
      * @param clazz
@@ -253,7 +200,7 @@ public class HibernateHelper {
     public static final Long selectHqlByQueryCountCondition(Session session,
     		ClassMetadata metadata, QueryCondition qc)
             throws HibernateException {
-    	String alias = ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
+    	String alias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
         // 获取组合的条件
         String condition = QueryUtil.buildConditionByQueryCondition(metadata, qc).toString();
         
@@ -298,11 +245,8 @@ public class HibernateHelper {
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.framework.orm.hibernate.impl
-     * @Method buildUpdateHql方法.<br>
-     * @Description TODO 批量修改
-     * @author 胡久洲
+     * 批量修改
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:18:15
      * @param clazz
      * @param alias
@@ -316,11 +260,11 @@ public class HibernateHelper {
         Map<String, Object> batchUpdateMap = qc.getBatchUpdateMap();
         int i = 0;
         if(null != batchUpdateMap && batchUpdateMap.size() > 0) {
-        	String objectAlias = ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
+        	String objectAlias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
             hql.append("update ");
             hql.append(metadata.getEntityName());
             hql.append(" as ");
-            hql.append(ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase());
+            hql.append(ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase());
             hql.append(" set ");
             for(Iterator<Map.Entry<String, Object>> it = batchUpdateMap
                     .entrySet().iterator(); it.hasNext();) {
@@ -344,11 +288,8 @@ public class HibernateHelper {
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.framework.orm.hibernate.impl
-     * @Method buildDeleteHql方法.<br>
-     * @Description TODO 批量删除
-     * @author 胡久洲
+     * 批量删除
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:18:22
      * @param clazz
      * @param alias
@@ -356,7 +297,7 @@ public class HibernateHelper {
      * @return
      */
     private static final String buildDeleteHql(ClassMetadata metadata) {
-    	String objectAlias = ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
+    	String objectAlias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
         StringBuilder hql = new StringBuilder();
         hql.append("delete ");
         hql.append(metadata.getEntityName());
@@ -367,11 +308,8 @@ public class HibernateHelper {
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.framework.orm.hibernate.impl
-     * @Method buildQueryHql方法.<br>
-     * @Description TODO 查询Hql
-     * @author 胡久洲
+     * 查询Hql
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:18:30
      * @param clazz
      * @param alias
@@ -383,8 +321,8 @@ public class HibernateHelper {
         hql.append(" from ");
         hql.append(metadata.getEntityName());
         hql.append(" as ");
-        hql.append(ObjectUtil.getBaseClassName(metadata.getEntityName()).toLowerCase());
-        if(!StringUtil.empty(condition) && condition.length() > 0) {
+        hql.append(ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase());
+        if(StringUtils.isNotEmpty(condition) && condition.length() > 0) {
             hql.append(" where 1 = 1 ").append(condition);
         }
 
@@ -392,11 +330,8 @@ public class HibernateHelper {
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.framework.orm.hibernate.impl
-     * @Method addOrderby方法.<br>
-     * @Description TODO 排序
-     * @author 胡久洲
+     * 排序
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:18:36
      * @param qc
      * @param objectAlias
@@ -410,7 +345,7 @@ public class HibernateHelper {
             for(int i = 0; i < orderList.size(); i++) {
                 OrderEntry orderEntry = (OrderEntry)orderList.get(i);
                 String orderKey = (String)orderEntry.getKey();
-                if(StringUtil.empty(orderKey)) {
+                if(StringUtils.isEmpty(orderKey)) {
                     continue;
                 }
                 if(i > 0) {

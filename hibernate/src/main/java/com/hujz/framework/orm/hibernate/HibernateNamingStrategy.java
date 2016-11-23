@@ -16,11 +16,7 @@ public class HibernateNamingStrategy extends ImprovedNamingStrategy implements N
 //	private String currentTablePrefix; 
 
     /**
-     * @Project orm-hibernate
-     * @Package com.hujz.framework.orm.hibernate
-     * @see org.hibernate.cfg.ImprovedNamingStrategy#classToTableName(java.lang.String)
-     * @Method classToTableName方法.<br>
-     * @Description 如果在<class>元素中没有显示设置表名，Hibernate调用该方法
+     * 如果在<class>元素中没有显示设置表名，Hibernate调用该方法
      * @author jiuzhou.hu@baozun.cn
      * @date 2016年1月6日 下午6:21:56
      * @param className
@@ -33,11 +29,7 @@ public class HibernateNamingStrategy extends ImprovedNamingStrategy implements N
     } 
 
     /**
-     * @Project orm-hibernate
-     * @Package com.hujz.framework.orm.hibernate
-     * @see org.hibernate.cfg.ImprovedNamingStrategy#propertyToColumnName(java.lang.String)
-     * @Method propertyToColumnName方法.<br>
-     * @Description 如果在<property>元素中没有显示设置字段名，Hibernate调用该方法
+     * 如果在<property>元素中没有显示设置字段名，Hibernate调用该方法
      * @author jiuzhou.hu@baozun.cn
      * @date 2016年1月6日 下午6:22:49
      * @param propertyName
@@ -49,11 +41,7 @@ public class HibernateNamingStrategy extends ImprovedNamingStrategy implements N
     } 
 
     /**
-     * @Project orm-hibernate
-     * @Package com.hujz.framework.orm.hibernate
-     * @see org.hibernate.cfg.ImprovedNamingStrategy#columnName(java.lang.String)
-     * @Method columnName方法.<br>
-     * @Description 如果在<property>元素中显示设置了字段名，Hibernate调用该方法
+     * 如果在<property>元素中显示设置了字段名，Hibernate调用该方法
      * @author jiuzhou.hu@baozun.cn
      * @date 2016年1月6日 下午6:23:02
      * @param columnName
@@ -65,11 +53,7 @@ public class HibernateNamingStrategy extends ImprovedNamingStrategy implements N
     } 
 
     /**
-     * @Project orm-hibernate
-     * @Package com.hujz.framework.orm.hibernate
-     * @see org.hibernate.cfg.ImprovedNamingStrategy#tableName(java.lang.String)
-     * @Method tableName方法.<br>
-     * @Description 如果在<class>元素中显示设置了表名，Hibernate调用该方法
+     * 如果在<class>元素中显示设置了表名，Hibernate调用该方法
      * @author jiuzhou.hu@baozun.cn
      * @date 2016年1月6日 下午6:22:19
      * @param tableName

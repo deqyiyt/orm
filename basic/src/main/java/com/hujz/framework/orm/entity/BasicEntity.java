@@ -19,11 +19,10 @@ import com.hujz.framework.orm.annotation.UpdateTime;
 
 /**
  *********************************************** 
- * @Copyright (c) by ysc All right reserved.
  * @Create Date: 2014-2-25 下午5:48:16
- * @Create Author: hujz
+ * @Create Author: jiuzhou.hu
  * @File Name: BasicEntity
- * @Function: hibernate映射实体类超类
+ * @Function: 实体类超类
  * @Last version: 1.0
  * @Last Update Date:
  * @Change Log:
@@ -191,11 +190,8 @@ public abstract class BasicEntity extends SuperEntity{
 	}
 
 	/**
-     * @Project SC
-     * @Package com.hujz.framework.orm.hibernate.model
-     * @Method clobToString方法.<br>
-     * @Description java.sql.Clob 转化为String的方法
-     * @author 胡久洲
+     * java.sql.Clob 转化为String的方法
+     * @author jiuzhou.hu
      * @date 2014年8月21日 上午11:12:37
      * @param clob
      * @return

@@ -11,46 +11,14 @@ import com.hujz.framework.orm.bean.PageTools;
 import com.hujz.framework.orm.bean.QueryPropert;
 
 /**
- *<b>系统名称:</b><b> &nbsp;&nbsp;&nbsp;&nbsp;
- * 
- *Hibernate通用Dao</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
- * 
- *<b>子系统名：</b><br>
- *&nbsp;&nbsp;&nbsp;&nbsp;
- * 
- *Hibernate通用条件类<br>
- * 
- *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
- * 
- *<b>文件名:</b><br>
- *&nbsp;&nbsp;&nbsp;&nbsp;
- * 
- *QueryConditionNew.java<br>
- *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
- * 
- *<b>类名:</b><br>
- *&nbsp;&nbsp;&nbsp;&nbsp;
- * 
- *QueryConditionNew类.<br>
- *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
- * 
- *<br>
- *<b>概要说明</b><br>
- *&nbsp;&nbsp;&nbsp;&nbsp;
- * 
- * 
- *QueryConditionNew类的概要说明<br>
- **&nbsp;*&nbsp;*&nbsp;*&nbsp;*&nbsp;*&nbsp;*&nbsp;
- * 
- *根据用户的设置条件承载设置条件<br>
- * 
- *<b>***History*** </b/><br>
- *更新年月日， 更改原因， 姓名， 更新内容<br>
- *2009-8-29, 99999, hujiuzhou@hotoa.com, 新建<br>
- * 
- *@author :hujz@yschome.com
- *@since :2009-8-29
- *@version:1.0
+ *********************************************** 
+ * @Title Hibernate通用条件类
+ * @Last version: 1.0
+ * @Create Date: 2016年11月22日 下午5:57:53
+ * @Create Author: jiuzhou.hu
+ * @Last Update Date:
+ * @Change Log:
+ ************************************************* 
  */
 public class QueryCondition implements Serializable{
 	
@@ -232,10 +200,8 @@ public class QueryCondition implements Serializable{
 	}
 	
 	/**
-	 * @Project sc
-	 * @Package com.hujz.soasoft.orm
-	 * @Description 分页查询
-	 * @author 胡久洲
+	 * 分页查询
+	 * @author jiuzhou.hu
 	 * @date 2015年9月12日 下午12:58:41
 	 * @param eachPageShowRows		查询条数
 	 * @param pageNumber			查询第几页
@@ -245,10 +211,8 @@ public class QueryCondition implements Serializable{
 	}
 	
 	/**
-	 * @Project sc
-	 * @Package com.hujz.soasoft.orm
-	 * @Description 分页查询
-	 * @author 胡久洲
+	 * 分页查询
+	 * @author jiuzhou.hu
 	 * @date 2015年9月12日 下午12:58:53
 	 * @param eachPageShowRows		查询条数
 	 * @param pageNumber			查询第几页
@@ -399,11 +363,8 @@ public class QueryCondition implements Serializable{
 
     // ///////////////////////////////////////////////////////
     /**
-     * @Project sc
-     * @Package com.hujz.soasoft.orm
-     * @Method checkMap方法.<br>
-     * @Description 判断Map对象是否已经实例化
-     * @author 胡久洲
+     * 判断Map对象是否已经实例化
+     * @author jiuzhou.hu
      * @date 2015年9月12日 下午12:59:42
      * @param map 被判断的Map对象
      * @return 已经实例化的Map对象
@@ -419,11 +380,8 @@ public class QueryCondition implements Serializable{
 
     // ////////////////////////////////////////////////
     /**
-     * @Project SB
-     * @Package com.hujz.soasoft.orm
-     * @Method put方法.<br>
-     * @Description 模糊等于
-     * @author 胡久洲
+     * 模糊等于
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:12:15
      * @param key 	属性名称
      * @param value	值
@@ -434,11 +392,8 @@ public class QueryCondition implements Serializable{
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.soasoft.orm
-     * @Method equals方法.<br>
-     * @Description 等于
-     * @author 胡久洲
+     * 等于
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:12:41
      * @param key	属性名称
      * @param value	值
@@ -449,11 +404,8 @@ public class QueryCondition implements Serializable{
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.soasoft.orm
-     * @Method notEquals方法.<br>
-     * @Description 不等于
-     * @author 胡久洲
+     * 不等于
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:12:58
      * @param key	属性名称
      * @param value	值
@@ -464,11 +416,8 @@ public class QueryCondition implements Serializable{
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.soasoft.orm
-     * @Method greate方法.<br>
-     * @Description 大于
-     * @author 胡久洲
+     * 大于
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:13:10
      * @param key	属性名称
      * @param value	值
@@ -479,11 +428,8 @@ public class QueryCondition implements Serializable{
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.soasoft.orm
-     * @Method greateEquals方法.<br>
-     * @Description 大于等于
-     * @author 胡久洲
+     * 大于等于
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:13:22
      * @param key	属性名称
      * @param value	值
@@ -494,11 +440,8 @@ public class QueryCondition implements Serializable{
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.soasoft.orm
-     * @Method less方法.<br>
-     * @Description 小于
-     * @author 胡久洲
+     * 小于
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:13:34
      * @param key	属性名称
      * @param value	值
@@ -509,11 +452,8 @@ public class QueryCondition implements Serializable{
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.soasoft.orm
-     * @Method lessEquals方法.<br>
-     * @Description 小于等于
-     * @author 胡久洲
+     * 小于等于
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:13:46
      * @param key	属性名称
      * @param value	值
@@ -524,11 +464,8 @@ public class QueryCondition implements Serializable{
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.soasoft.orm
-     * @Method isNull方法.<br>
-     * @Description 值为空
-     * @author 胡久洲
+     * 值为空
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:13:58
      * @param key	属性名称
      */
@@ -538,11 +475,8 @@ public class QueryCondition implements Serializable{
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.soasoft.orm
-     * @Method isNotNull方法.<br>
-     * @Description 值非空
-     * @author 胡久洲
+     * 值非空
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:14:10
      * @param key	属性名称
      */
@@ -552,11 +486,8 @@ public class QueryCondition implements Serializable{
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.soasoft.orm
-     * @Method in方法.<br>
-     * @Description 等于列表中的某个值
-     * @author 胡久洲
+     * 等于列表中的某个值
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:14:21
      * @param key	属性名称
      * @param value	值
@@ -568,11 +499,8 @@ public class QueryCondition implements Serializable{
         inMap.put(key, value);
     }
     /**
-     * @Project SB
-     * @Package com.hujz.soasoft.orm
-     * @Method in方法.<br>
-     * @Description 等于列表中的某个值
-     * @author 胡久洲
+     * 等于列表中的某个值
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:14:39
      * @param key	属性名称
      * @param value	值
@@ -591,11 +519,8 @@ public class QueryCondition implements Serializable{
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.soasoft.orm
-     * @Method notIn方法.<br>
-     * @Description 不等于列表中的任意一个值
-     * @author 胡久洲
+     * 不等于列表中的任意一个值
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:15:10
      * @param key	属性名称
      * @param value	值
@@ -608,11 +533,8 @@ public class QueryCondition implements Serializable{
     }
     
     /**
-     * @Project SB
-     * @Package com.hujz.soasoft.orm
-     * @Method in方法.<br>
-     * @Description 等于列表中的某个值
-     * @author 胡久洲
+     * 等于列表中的某个值
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:14:39
      * @param key	属性名称
      * @param value	值
@@ -631,11 +553,8 @@ public class QueryCondition implements Serializable{
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.soasoft.orm
-     * @Method between方法.<br>
-     * @Description 大于等于某个值并且小于等于另外一个值
-     * @author 胡久洲
+     * 大于等于某个值并且小于等于另外一个值
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:15:27
      * @param key		属性名称
      * @param beginValue
@@ -647,11 +566,8 @@ public class QueryCondition implements Serializable{
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.soasoft.orm
-     * @Method notBetween方法.<br>
-     * @Description 小于开始值或者大于结束值
-     * @author 胡久洲
+     * 小于开始值或者大于结束值
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:15:46
      * @param key
      * @param beginValue
@@ -663,11 +579,8 @@ public class QueryCondition implements Serializable{
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.soasoft.orm
-     * @Method batchUpdate方法.<br>
-     * @Description 小于开始值或者大于结束值
-     * @author 胡久洲
+     * 小于开始值或者大于结束值
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:15:53
      * @param key
      * @param value
@@ -680,9 +593,7 @@ public class QueryCondition implements Serializable{
     
     /**
      * 倒序排序，先调用本方法的后排序
-     * @Title: order
      * @author hjz
-     * @Description:(这里用一句话描述这个方法的作用)
      * @param 设定文件
      * @return 返回类型
      */
@@ -698,11 +609,8 @@ public class QueryCondition implements Serializable{
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.soasoft.orm
-     * @Method orderAsc方法.<br>
-     * @Description 升序
-     * @author 胡久洲
+     * 升序
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:16:07
      * @param key
      */
@@ -711,11 +619,8 @@ public class QueryCondition implements Serializable{
     }
 
     /**
-     * @Project SB
-     * @Package com.hujz.soasoft.orm
-     * @Method orderDesc方法.<br>
-     * @Description 降序
-     * @author 胡久洲
+     * 降序
+     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:16:17
      * @param key
      */
@@ -724,11 +629,8 @@ public class QueryCondition implements Serializable{
     }
     
 	/**
-	 * @Project SB
-	 * @Package com.hujz.soasoft.orm
-	 * @Method getEntry方法.<br>
-	 * @Description 获得实体类条件
-	 * @author 胡久洲
+	 * 获得实体类条件
+	 * @author jiuzhou.hu
 	 * @date 2013-8-6 上午10:16:30
 	 * @return
 	 */
@@ -737,11 +639,8 @@ public class QueryCondition implements Serializable{
 	}
 	
 	/**
-	 * @Project SB
-	 * @Package com.hujz.soasoft.orm
-	 * @Method setEntry方法.<br>
-	 * @Description 设置实体类条件
-	 * @author 胡久洲
+	 * 设置实体类条件
+	 * @author jiuzhou.hu
 	 * @date 2013-8-6 上午10:16:38
 	 * @param entry
 	 */

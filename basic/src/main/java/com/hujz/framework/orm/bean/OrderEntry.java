@@ -4,9 +4,8 @@ import java.io.Serializable;
 
 /**
  *********************************************** 
- * @Copyright (c) by soap All right reserved.
  * @Create Date: 2015年9月12日 下午12:57:01
- * @Create Author: hujiuzhou
+ * @Create Author: jiuzhou.hu
  * @File Name: OrderEntry
  * @Function: 排序类封装
  * @Last version: 1.0

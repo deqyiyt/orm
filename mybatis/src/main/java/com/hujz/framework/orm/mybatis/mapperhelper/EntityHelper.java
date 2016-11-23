@@ -176,7 +176,7 @@ public class EntityHelper {
      * @Package com.hujz.framework.orm.mybatis.mapperhelper
      * @Method getColumnByProperty方法.<br>
      * @Description 根据属性名获取数据库对应字段
-     * @author 胡久洲
+     * @author 352deqyiyt@163.com
      * @date 2015年9月24日 下午1:08:49
      * @param className
      * @param property

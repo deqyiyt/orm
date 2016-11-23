@@ -2,9 +2,8 @@ package com.hujz.framework.orm.entity;
 
 /**
  *********************************************** 
- * @Copyright (c) by soap All right reserved.
  * @Create Date: 2015年9月12日 下午1:01:53
- * @Create Author: hujiuzhou
+ * @Create Author: jiuzhou.hu
  * @File Name: SuperEntity
  * @Function: 实体类映射超类
  * @Last version: 1.0

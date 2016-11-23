@@ -16,6 +16,12 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
@@ -28,6 +34,10 @@
 			<artifactId>spring-orm</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
 		</dependency>
@@ -36,10 +46,9 @@
 			<artifactId>mybatis-spring</artifactId>
 		</dependency>
 		<!-- <dependency>
-            <groupId>com.github.jsqlparser</groupId>
-            <artifactId>jsqlparser</artifactId>
-            <version>0.9.4</version>
-        </dependency> -->
+			<groupId>tk.mybatis</groupId>
+			<artifactId>mapper</artifactId>
+		</dependency> -->
 		<!-- 
 		<dependency> 
 			<groupId>org.mybatis.generator</groupId>
@@ -57,10 +66,6 @@
 			<groupId>com.github.jsqlparser</groupId>
 			<artifactId>jsqlparser</artifactId> 
 			<version>0.9.4</version>
-		</dependency> 
-		<dependency>
-			<groupId>tk.mybatis</groupId>
-			<artifactId>mapper</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>javax.validation</groupId>
@@ -82,21 +87,19 @@
 			<groupId>javax.persistence</groupId>
 			<artifactId>persistence-api</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>log4j-over-slf4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
 
 		<!--集成其它组件 -->
 		<dependency>
-			<groupId>com.hujz.framework</groupId>
-			<artifactId>sc</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>com.hujz.framework.module.orm</groupId>
 			<artifactId>orm-basic</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>com.hujz.framework</groupId>
-			<artifactId>sb</artifactId>
-			<scope>test</scope>
 		</dependency>
 	</dependencies>
 </project>

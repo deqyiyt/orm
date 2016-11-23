@@ -11,7 +11,6 @@ public class Base64UuidGenerator implements IdentifierGenerator {
     @Override
     public Serializable generate(SessionImplementor session, Object object)
             throws HibernateException {
-        // TODO Auto-generated method stub
         return UuidUtils.compressedUuid();
     }
 }
