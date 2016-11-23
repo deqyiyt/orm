@@ -34,6 +34,7 @@ import java.util.List;
  * @version 3.6.0
  *          项目地址 : http://git.oschina.net/free/Mybatis_PageHelper
  */
+@SuppressWarnings({ "hiding", "unchecked" })
 public class Page<E> extends ArrayList<E> {
     private static final long serialVersionUID = 1L;
 
@@ -251,7 +252,7 @@ public class Page<E> extends ArrayList<E> {
         return orderBy;
     }
 
-    public <E> Page<E> setOrderBy(String orderBy) {
+	public <E> Page<E> setOrderBy(String orderBy) {
         this.orderBy = orderBy;
         return (Page<E>) this;
     }

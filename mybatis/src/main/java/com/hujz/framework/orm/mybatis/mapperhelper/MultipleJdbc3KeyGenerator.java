@@ -87,7 +87,8 @@ public class MultipleJdbc3KeyGenerator extends Jdbc3KeyGenerator {
         }
     }
 
-    private Collection<Object> getParameters(Object parameter) {
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	private Collection<Object> getParameters(Object parameter) {
         Collection<Object> parameters = null;
         if (parameter instanceof Collection) {
             parameters = (Collection) parameter;
