@@ -109,4 +109,28 @@ public class BaseQueryProvider extends MapperTemplate {
         sqlNodes.add(new WhereSqlNode(ms.getConfiguration(), getAllIfColumnNode(entityClass)));
         return new MixedSqlNode(sqlNodes);
     }
+    
+    /**
+     * 根据主键进行查询
+     *
+     * @param ms
+     */
+    public void getRandomOne(MappedStatement ms) {
+        final Class<?> entityClass = getSelectReturnType(ms);
+        //开始拼sql
+        String sql = new SQL() {{
+            //select全部列
+            SELECT(EntityHelper.getSelectColumns(entityClass));
+            //from表
+            FROM(tableName(entityClass));
+            
+        }}.toString();
+        sql += " ORDER BY RAND() LIMIT 1";
+        //使用静态SqlSource
+        StaticSqlSource sqlSource = new StaticSqlSource(ms.getConfiguration(), sql);
+        //替换原有的SqlSource
+        setSqlSource(ms, sqlSource);
+        //将返回值修改为实体类型
+        setResultType(ms, entityClass);
+    }
 }
