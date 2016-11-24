@@ -5,4 +5,5 @@ import com.hujz.framework.orm.mybatis.test.entity.SysUser;
 
 public interface SysUserDao extends GenericDao<SysUser, String>{
 	
+	SysUser selectById(String id);
 }

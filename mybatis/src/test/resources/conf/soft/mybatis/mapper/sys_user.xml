@@ -3,6 +3,6 @@
 <mapper namespace="com.hujz.framework.orm.mybatis.test.dao.SysUserDao">
 	
 	<select id="selectById" parameterType="String" resultType="com.hujz.framework.orm.mybatis.test.entity.SysUser">
-		select * from sam_sys_user where id = #{id}
+		select * from t_sys_user where id = #{id}
 	</select>
 </mapper>

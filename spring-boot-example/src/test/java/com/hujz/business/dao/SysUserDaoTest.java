@@ -17,6 +17,32 @@ public class SysUserDaoTest extends BaseTest{
 	private SysUserDao sysUserDao;
 	
 	/**
+	 * 通过mapper自定义查询并分页
+	 * @Description 通过QueryCondition进行分页
+	 * @author jiuzhou.hu
+	 * @date 2015年9月14日 上午10:50:54
+	 */
+	@Test
+	public void testQueryByPage() {
+		QueryCondition cond = new QueryCondition(20,0);
+		List<SysUser> list = sysUserDao.queryByPage(cond);
+		Assert.assertNotNull(list);
+	}
+	
+	/**
+	 * 通过mapper自定义查询并分页
+	 * @Description 通过PageTools进行分页
+	 * @author jiuzhou.hu
+	 * @date 2015年9月14日 上午10:50:54
+	 */
+	@Test
+	public void testFindByPage() {
+		QueryCondition cond = new QueryCondition(20,0);
+		List<SysUser> list = sysUserDao.findByPage(cond.getPageTools());
+		Assert.assertNotNull(list);
+	}
+	
+	/**
 	 * @Method testQuery方法.<br>
 	 * @Description 测试按条件查询，分页，排序
 	 * @author jiuzhou.hu

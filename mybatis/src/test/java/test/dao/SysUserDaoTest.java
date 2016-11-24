@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.hujz.framework.orm.mybatis.test.dao.SysUserDao;
 import com.hujz.framework.orm.mybatis.test.entity.SysUser;
+import com.hujz.framework.orm.mybatis.util.StringUtil;
 import com.hujz.framework.orm.util.QueryCondition;
 
 
@@ -21,6 +22,18 @@ public class SysUserDaoTest {
 	
 	@Autowired
 	private SysUserDao sysUserDao;
+	
+	
+	/**
+	 * 自定义mapper方法
+	 * @author jiuzhou.hu
+	 * @date 2015年9月14日 上午10:48:44
+	 */
+	@Test
+	public void selectById() {
+		SysUser user = sysUserDao.selectById(StringUtil.createSystemDataPrimaryKey());
+		System.out.println(user);
+	}
 	
 	/**
 	 * @Method testQuery方法.<br>

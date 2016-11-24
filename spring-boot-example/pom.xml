@@ -13,6 +13,11 @@
 	<version>1.0-SNAPSHOT</version>
 	<modelVersion>4.0.0</modelVersion>
 	
+	<properties>
+		<!-- springboot 1.3.5需要hibernate新版本的支持，暂时也不清楚内部构造 -->
+		<hibernate.version>5.2.4.Final</hibernate.version>
+	</properties>
+	
 	<dependencyManagement>
         <dependencies>
             <dependency>
@@ -24,7 +29,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
+	
 	<dependencies>
 		<dependency>
 			<groupId>com.hujz.framework.module.orm</groupId>
