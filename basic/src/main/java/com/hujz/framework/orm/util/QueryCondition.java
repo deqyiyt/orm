@@ -6,7 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.alibaba.druid.support.json.JSONUtils;
+import javax.persistence.Query;
+
 import com.hujz.framework.orm.bean.OrderEntry;
 import com.hujz.framework.orm.bean.PageTools;
 import com.hujz.framework.orm.bean.QueryPropert;
@@ -841,6 +842,6 @@ public class QueryCondition implements Serializable{
 		return curPage;
 	}
 	public String cacheKey() {
-		return Md5Utils.md5(JSONUtils.toJSONString(this).getBytes());
+		return Md5Utils.md5(SerializableUtil.convert2String(this).getBytes());
 	}
 }
