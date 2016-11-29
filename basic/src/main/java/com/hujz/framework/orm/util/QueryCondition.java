@@ -14,7 +14,7 @@ import com.hujz.framework.orm.bean.QueryPropert;
 
 /**
  *********************************************** 
- * @Title Hibernate通用条件类
+ * @Title 通用条件类
  * @Last version: 1.0
  * @Create Date: 2016年11月22日 下午5:57:53
  * @Create Author: jiuzhou.hu
@@ -36,6 +36,14 @@ public class QueryCondition implements Serializable{
 	 * 含义 分页实体类
 	 */
 	private PageTools pageTools;
+	
+	/**
+	 * @Title beforeSql
+	 * @type String
+	 * @date 2016年11月28日 下午4:14:13
+	 * 含义 自定义sql，where前面一部分
+	 */
+	private String beforeSql;
     
     /**
      * @Title likeEqualsMap
@@ -818,6 +826,22 @@ public class QueryCondition implements Serializable{
 	 */
 	public void setClazz(Class<?> clazz) {
 		this.clazz = clazz;
+	}
+
+	/**
+	 * beforeSql的获取.
+	 * @return String
+	 */
+	public String getBeforeSql() {
+		return beforeSql;
+	}
+
+	/**
+	 * 设定beforeSql的值.
+	 * @param String
+	 */
+	public void setBeforeSql(String beforeSql) {
+		this.beforeSql = beforeSql;
 	}
 
 	/**

@@ -27,10 +27,16 @@ public class ConditionQueryProvider extends MapperSqlTemplate {
          //修改返回值类型为实体类型
          setResultType(ms, entityClass);
          //开始拼sql
-         StringBuilder sql = new StringBuilder("select ")
+         StringBuilder sql = new StringBuilder("")
+        	.append("<if test=\"beforeSql != null\">")
+        	.append("${beforeSql} ")
+        	.append("</if>")
+        	.append("<if test=\"beforeSql == null\">")
+        	.append("select ")
          	.append(EntityHelper.getSelectColumns(entityClass))
          	.append(" from ")
          	.append(tableName(entityClass))
+         	.append("</if>")
      		.append(resolveQueryConditionToSql(entityClass.getName()));
         return sql.toString();
     }
