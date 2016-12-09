@@ -27,4 +27,12 @@ public class StringUtil extends StringUtils {
                 return str;
         }
     }
+    
+    public static String toBetween(String item) {
+    	if(!isEmpty(item)) {
+    		return "'" + item.replace("_", "' and '") + "'";
+    	} else {
+    		return item;
+    	}
+    }
 }
