@@ -115,6 +115,11 @@ public class PerformanceInterceptor implements Interceptor {
         } else {
             result = "null";
         }
-        return sql.replaceFirst("\\?", result);
+        //对于打印不出来的语句，跳过
+        try {
+        	return sql.replaceFirst("\\?", result);
+        } catch(Exception e) {
+        	return "";
+        }
     }
 }
