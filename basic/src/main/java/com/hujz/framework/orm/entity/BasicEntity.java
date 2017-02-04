@@ -47,15 +47,6 @@ public abstract class BasicEntity extends SuperEntity{
 	private String id;
 
 	/**
-	 * @Title createId
-	 * @type String
-	 * @date 2014-2-25 下午5:47:27 
-	 * 含义 创建人
-	 */
-	@Column(updatable=false)
-	private String createUserId;
-
-	/**
 	 * @Title created
 	 * @type Date
 	 * @date 2014-2-24 下午12:49:24 
@@ -63,16 +54,7 @@ public abstract class BasicEntity extends SuperEntity{
 	 */
 	@Column(updatable=false)
 	@CreateTime
-	private Date createTime;
-	
-	/**
-	 * @Title modifieId
-	 * @type String
-	 * @date 2014-2-25 下午5:47:34 
-	 * 含义 修改人
-	 */
-	@Column
-	private String updateUserId;
+	private Date createDt;
 
 	/**
 	 * @Title modified
@@ -82,7 +64,7 @@ public abstract class BasicEntity extends SuperEntity{
 	 */
 	@Column
 	@UpdateTime
-	private Date updateTime;
+	private Date updateDt;
 	
 	/**
 	 * @Title isDelete
@@ -110,70 +92,6 @@ public abstract class BasicEntity extends SuperEntity{
 	}
 
 	/**
-	 * createUserId的获取.
-	 * @return String
-	 */
-	public String getCreateUserId() {
-		return createUserId;
-	}
-
-	/**
-	 * 设定createUserId的值.
-	 * @param String
-	 */
-	public void setCreateUserId(String createUserId) {
-		this.createUserId = createUserId;
-	}
-
-	/**
-	 * createTime的获取.
-	 * @return Date
-	 */
-	public Date getCreateTime() {
-		return createTime;
-	}
-
-	/**
-	 * 设定createTime的值.
-	 * @param Date
-	 */
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
-
-	/**
-	 * updateUserId的获取.
-	 * @return String
-	 */
-	public String getUpdateUserId() {
-		return updateUserId;
-	}
-
-	/**
-	 * 设定updateUserId的值.
-	 * @param String
-	 */
-	public void setUpdateUserId(String updateUserId) {
-		this.updateUserId = updateUserId;
-	}
-
-	/**
-	 * updateTime的获取.
-	 * @return Date
-	 */
-	public Date getUpdateTime() {
-		return updateTime;
-	}
-
-	/**
-	 * 设定updateTime的值.
-	 * @param Date
-	 */
-	public void setUpdateTime(Date updateTime) {
-		this.updateTime = updateTime;
-	}
-	
-	/**
 	 * isDelete的获取.
 	 * @return Integer
 	 */
@@ -187,6 +105,38 @@ public abstract class BasicEntity extends SuperEntity{
 	 */
 	public void setIsDelete(Integer isDelete) {
 		this.isDelete = isDelete;
+	}
+
+	/**
+	 * createDt的获取.
+	 * @return Date
+	 */
+	public Date getCreateDt() {
+		return createDt;
+	}
+
+	/**
+	 * 设定createDt的值.
+	 * @param Date
+	 */
+	public void setCreateDt(Date createDt) {
+		this.createDt = createDt;
+	}
+
+	/**
+	 * updateDt的获取.
+	 * @return Date
+	 */
+	public Date getUpdateDt() {
+		return updateDt;
+	}
+
+	/**
+	 * 设定updateDt的值.
+	 * @param Date
+	 */
+	public void setUpdateDt(Date updateDt) {
+		this.updateDt = updateDt;
 	}
 
 	/**
