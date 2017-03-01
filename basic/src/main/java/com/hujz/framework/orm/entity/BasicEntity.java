@@ -8,11 +8,10 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Transient;
-
-import org.hibernate.annotations.GenericGenerator;
 
 import com.hujz.framework.orm.annotation.CreateTime;
 import com.hujz.framework.orm.annotation.UpdateTime;
@@ -41,8 +40,12 @@ public abstract class BasicEntity extends SuperEntity{
 	private static final long serialVersionUID = -1464340211467283689L;
 	
 	@Id
+	/*
+	//  hibernate使用UUID方式
 	@GenericGenerator(name = "uuidGenerator", strategy = "com.hujz.framework.orm.hibernate.identifier.UuidGenerator")
 	@GeneratedValue(generator = "uuidGenerator")
+	*/
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(length = 32, unique = true, nullable = false)
 	private String id;
 

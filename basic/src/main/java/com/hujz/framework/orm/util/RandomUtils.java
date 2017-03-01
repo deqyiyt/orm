@@ -163,20 +163,36 @@ public class RandomUtils {
      * 生成一个long类型的随机数 
      * @author hjz
      * @date 2015-1-12 下午1:15:52
-     * @param begin 代表开始日期的long类型数
-     * @param end 代表结束日期的long类型数
+     * @param begin
+     * @param end
      * @return 返回long类型的随机数
      */
     public static long random(long begin,long end){
-        //Math.random()生成0到1之间的一个随机数
-        //随机数接近0时，生成的日期接近开始日期，随机数接近1时，生成的日期接近结束日期
-        long rtn = begin + (long)(Math.random() * (end - begin));
+    	long rtn = begin + (long)(Math.random() * (end - begin));
         if(rtn == begin || rtn == end){
             return random(begin,end);
         }
         return rtn;
     }
     
+    /**
+     * 生成一个double类型的随机数 
+     * @author hjz
+     * @date 2015-1-12 下午1:15:52
+     * @param begin
+     * @param end
+     * @return 返回double类型的随机数
+     */
+    public static double randomDouble(long begin,long end){
+    	double rtn = begin + (double)(Math.random() * (end - begin));
+        if(rtn == begin || rtn == end){
+            return randomDouble(begin,end);
+        }
+        return rtn;
+    }
+    public static void main(String[] args) {
+		System.out.println(random(1, 100));
+	}
     
     /**
 	 * 生成随即颜色

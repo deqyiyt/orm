@@ -589,7 +589,7 @@ public class QueryCondition implements Serializable{
     }
 
     /**
-     * 小于开始值或者大于结束值
+     * 需要修改的属性
      * @author jiuzhou.hu
      * @date 2013-8-6 上午10:15:53
      * @param key
