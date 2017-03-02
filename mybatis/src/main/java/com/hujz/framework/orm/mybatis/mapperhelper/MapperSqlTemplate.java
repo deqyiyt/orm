@@ -100,7 +100,7 @@ public abstract class MapperSqlTemplate extends MapperTemplate{
 			.append(" </if> ")
 			.append(" <if test=\"inMap != null\"> ")
 			.append(" <foreach collection=\"inMap\" index=\"key\"  item=\"value\" separator=\"and\" open=\" and (\" close=\")\"> ")
-			.append(" <foreach collection=\"value\" item=\"itemin\" index=\"index\" separator=\"or\" close=\"\"> ")
+			.append(" <foreach collection=\"value\" item=\"itemin\" index=\"index\" separator=\"or\" open=\"(\" close=\")\"> ")
 			.append(" ").append(String.format(field,"key")).append(" = #{itemin} ")
 			.append(" </foreach> ")
 			.append(" </foreach> ")
