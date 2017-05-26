@@ -80,6 +80,23 @@ public class EntityHelper {
         }
         return entityTable;
     }
+    
+    /** 
+     * 获取实体类
+     * @author: jiuzhou.hu
+     * @date:2017年5月4日下午3:15:36 
+     * @param tableName
+     * @return
+     */
+    public static Class<?> getEntityClass(String tableName) {
+    	Class<?> clazz = null;
+    	for(Class<?> key:entityTableMap.keySet()) {
+    		if(StringUtil.equals(entityTableMap.get(key).getName(), tableName)) {
+    			clazz = key;
+    		}
+    	}
+        return clazz;
+    }
 
     /**
      * 获取默认的orderby语句

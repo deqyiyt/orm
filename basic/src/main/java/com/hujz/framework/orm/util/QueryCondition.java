@@ -38,6 +38,16 @@ public class QueryCondition implements Serializable{
 	private PageTools pageTools;
 	
 	/**
+	 * 经度
+	 */
+	private Double latitude;
+	
+	/**
+	 * 纬度
+	 */
+	private Double longitude;
+	
+	/**
 	 * @Title beforeSql
 	 * @type String
 	 * @date 2016年11月28日 下午4:14:13
@@ -859,6 +869,38 @@ public class QueryCondition implements Serializable{
 		this.pageTools = pageTools;
 	}
 	
+	/**
+	 * latitude的获取.
+	 * @return Double
+	 */
+	public Double getLatitude() {
+		return latitude;
+	}
+
+	/**
+	 * 设定latitude的值.
+	 * @param Double
+	 */
+	public void setLatitude(Double latitude) {
+		this.latitude = latitude;
+	}
+
+	/**
+	 * longitude的获取.
+	 * @return Double
+	 */
+	public Double getLongitude() {
+		return longitude;
+	}
+
+	/**
+	 * 设定longitude的值.
+	 * @param Double
+	 */
+	public void setLongitude(Double longitude) {
+		this.longitude = longitude;
+	}
+
 	private int getStartIndex(int curPage, int countPerPage) {
 		if (curPage <= 0) {
 			curPage = 1;

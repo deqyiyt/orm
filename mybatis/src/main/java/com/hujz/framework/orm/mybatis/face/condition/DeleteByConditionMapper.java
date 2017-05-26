@@ -2,7 +2,7 @@ package com.hujz.framework.orm.mybatis.face.condition;
 
 import java.io.Serializable;
 
-import org.apache.ibatis.annotations.SelectProvider;
+import org.apache.ibatis.annotations.DeleteProvider;
 
 import com.hujz.framework.orm.dao.BasicDao;
 import com.hujz.framework.orm.mybatis.provider.condition.ConditionDeleteProvider;
@@ -27,6 +27,6 @@ public interface DeleteByConditionMapper<T, PK extends Serializable> extends Bas
 	 * @param cond
 	 * @return
 	 */
-	@SelectProvider(type = ConditionDeleteProvider.class, method = "dynamicSQL")
-	void batchDelete(QueryCondition cond);
+	@DeleteProvider(type = ConditionDeleteProvider.class, method = "dynamicSQL")
+	int batchDelete(QueryCondition cond);
 }

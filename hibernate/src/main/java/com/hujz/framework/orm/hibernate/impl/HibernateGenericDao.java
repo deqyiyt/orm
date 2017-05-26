@@ -134,8 +134,8 @@ public abstract class HibernateGenericDao<T, PK extends Serializable> implements
 
     // 批量修改
 	@Override
-    public void batchUpdate(final QueryCondition qc) {
-		getHibernateTemplate().execute(new HibernateCallback<Integer>() {
+    public int batchUpdate(final QueryCondition qc) {
+		return getHibernateTemplate().execute(new HibernateCallback<Integer>() {
 			public Integer doInHibernate(Session session)
 					throws HibernateException {
 				int i = 0;
@@ -147,8 +147,8 @@ public abstract class HibernateGenericDao<T, PK extends Serializable> implements
     }
 
 	@Override
-	public void batchDelete(final QueryCondition cond) {
-		getHibernateTemplate().execute(new HibernateCallback<Integer>() {
+	public int batchDelete(final QueryCondition cond) {
+		return getHibernateTemplate().execute(new HibernateCallback<Integer>() {
 			public Integer doInHibernate(Session session)
 					throws HibernateException {
 				int i = 0;

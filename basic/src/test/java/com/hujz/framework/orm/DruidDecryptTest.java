@@ -20,7 +20,7 @@ public class DruidDecryptTest {
 		String encode = ConfigTools.encrypt("tt789_1qaz");
 		System.out.println(encode);
 		//解密
-		String password = ConfigTools.decrypt(encode);
+		String password = ConfigTools.decrypt("ljHzx/J9WwkgmvVyTiuh8SZNc54UY0jXzKWD4RsboXavVIEgNxbmnJSziBXiU40Wx7ya3dtuSQf3HJjaJSI1QQ==");
 		System.out.println(password);
 	}
 }

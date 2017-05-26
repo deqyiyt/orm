@@ -72,7 +72,7 @@ public interface BasicDao<T, PK extends Serializable> {
 	 * @param cond
 	 * @return
 	 */
-	void batchUpdate(QueryCondition cond);
+	int batchUpdate(QueryCondition cond);
 	
 	/**
 	 * 通过主键删除
@@ -89,7 +89,7 @@ public interface BasicDao<T, PK extends Serializable> {
 	 * @param cond
 	 * @return
 	 */
-	void batchDelete(QueryCondition cond);
+	int batchDelete(QueryCondition cond);
 	
 	/**
 	 * 通过条件查询

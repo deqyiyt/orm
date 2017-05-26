@@ -11,7 +11,7 @@ import com.hujz.framework.orm.util.QueryCondition;
 import com.hujz.business.BaseTest;
 import com.hujz.business.entity.SysUser;
 
-public class SysUserDaoTest extends BaseTest{
+public class SysUserDaoTest{
 	
 	@Autowired
 	private SysUserDao sysUserDao;

@@ -2,7 +2,7 @@ package com.hujz.framework.orm.mybatis.face.condition;
 
 import java.io.Serializable;
 
-import org.apache.ibatis.annotations.SelectProvider;
+import org.apache.ibatis.annotations.UpdateProvider;
 
 import com.hujz.framework.orm.dao.BasicDao;
 import com.hujz.framework.orm.mybatis.provider.condition.ConditionUpdateProvider;
@@ -27,6 +27,6 @@ public interface UpdateByConditionMapper<T, PK extends Serializable> extends Bas
 	 * @param cond
 	 * @return
 	 */
-	@SelectProvider(type = ConditionUpdateProvider.class, method = "dynamicSQL")
-	void batchUpdate(QueryCondition cond);
+	@UpdateProvider(type = ConditionUpdateProvider.class, method = "dynamicSQL")
+	int batchUpdate(QueryCondition cond);
 }
