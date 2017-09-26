@@ -61,7 +61,6 @@ public interface BaseQueryMapper<T, PK extends Serializable> extends BasicDao<T,
     /**
 	 * @Title 随机取一条
 	 * @Method getRandomOne方法.<br>
-	 * @Description TODO(用一句话描述该类做什么)
 	 * @author jiuzhou.hu
 	 * @date 2016年8月16日 下午2:41:51
 	 * @return

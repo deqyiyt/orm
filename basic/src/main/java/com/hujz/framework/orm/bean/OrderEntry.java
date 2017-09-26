@@ -19,7 +19,6 @@ public class OrderEntry implements Serializable{
 	 * @Title serialVersionUID
 	 * @type long
 	 * @date 2015-1-21 下午8:40:10
-	 * 含义 TODO
 	 */
 	private static final long serialVersionUID = 3520927826725876790L;
 	/**

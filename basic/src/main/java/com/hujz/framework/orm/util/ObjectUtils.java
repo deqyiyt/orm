@@ -109,8 +109,8 @@ public class ObjectUtils extends org.springframework.util.ObjectUtils {
             return null;
         }
         try {
-            Method method = object.getClass().getMethod("get" + StringUtils.upperFirst(sProperty), null);
-            return method.invoke(object, null);
+            Method method = object.getClass().getMethod("get" + StringUtils.upperFirst(sProperty));
+            return method.invoke(object);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -209,19 +209,16 @@ public abstract class HibernateGenericDao<T, PK extends Serializable> implements
 	
 	@Override
 	public T queryOneByEntity(T record) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public int queryCountByEntity(T record) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public List<T> queryByEntity(T record) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }

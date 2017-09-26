@@ -9,7 +9,6 @@ public class HibernateNamingStrategy extends ImprovedNamingStrategy implements N
 	 * @Title serialVersionUID
 	 * @type long
 	 * @date 2014-1-9 下午1:40:47
-	 * 含义 TODO
 	 */
 	private static final long serialVersionUID = 2496743485363610914L;
 	

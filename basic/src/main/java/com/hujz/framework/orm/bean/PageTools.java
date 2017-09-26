@@ -19,7 +19,6 @@ public class PageTools implements Serializable{
 	 * @Title serialVersionUID
 	 * @type long
 	 * @date 2015-1-21 下午8:29:00
-	 * 含义 TODO
 	 */
 	private static final long serialVersionUID = -6586839034985170593L;
 

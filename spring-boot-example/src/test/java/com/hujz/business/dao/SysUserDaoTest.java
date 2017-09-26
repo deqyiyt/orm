@@ -7,9 +7,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.hujz.framework.orm.util.QueryCondition;
-import com.hujz.business.BaseTest;
 import com.hujz.business.entity.SysUser;
+import com.hujz.framework.orm.util.QueryCondition;
 
 public class SysUserDaoTest{
 	

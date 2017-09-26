@@ -17,7 +17,6 @@ public abstract class SuperEntity implements java.io.Serializable{
 	 * @Title serialVersionUID
 	 * @type long
 	 * @date 2015-2-2 下午5:13:28
-	 * 含义 TODO
 	 */
 	private static final long serialVersionUID = -4995890547438866450L;
 }

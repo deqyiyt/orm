@@ -17,7 +17,7 @@ import com.alibaba.druid.filter.config.ConfigTools;
 public class DruidDecryptTest {
 	public static void main(String[] args) throws Exception {
 		//加密
-		String encode = ConfigTools.encrypt("tt789_1qaz");
+		String encode = ConfigTools.encrypt("7yaeqjj;mM=mQtp1KVr");
 		System.out.println(encode);
 		//解密
 		String password = ConfigTools.decrypt("ljHzx/J9WwkgmvVyTiuh8SZNc54UY0jXzKWD4RsboXavVIEgNxbmnJSziBXiU40Wx7ya3dtuSQf3HJjaJSI1QQ==");
