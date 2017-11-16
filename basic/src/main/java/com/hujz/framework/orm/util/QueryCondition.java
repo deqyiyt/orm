@@ -341,8 +341,10 @@ public class QueryCondition implements Serializable{
      * @return inMap值返回.
      */
     public Map<String, List<Object>> getInMap() {
-        for(String key:inMap.keySet()) {
-            ArrayUtil.distinct(inMap.get(key));
+        if(inMap != null) {
+            for(String key:inMap.keySet()) {
+                ArrayUtil.distinct(inMap.get(key));
+            }
         }
         return inMap;
     }
@@ -353,8 +355,10 @@ public class QueryCondition implements Serializable{
      * @return notInMap值返回.
      */
     public Map<String, List<Object>> getNotInMap() {
-        for(String key:inMap.keySet()) {
-            ArrayUtil.distinct(inMap.get(key));
+        if(inMap != null) {
+            for(String key:inMap.keySet()) {
+                ArrayUtil.distinct(inMap.get(key));
+            }
         }
         return notInMap;
     }
