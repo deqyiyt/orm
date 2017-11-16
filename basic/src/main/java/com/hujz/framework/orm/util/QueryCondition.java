@@ -341,6 +341,9 @@ public class QueryCondition implements Serializable{
      * @return inMap值返回.
      */
     public Map<String, List<Object>> getInMap() {
+        for(String key:inMap.keySet()) {
+            ArrayUtil.distinct(inMap.get(key));
+        }
         return inMap;
     }
 
@@ -350,6 +353,9 @@ public class QueryCondition implements Serializable{
      * @return notInMap值返回.
      */
     public Map<String, List<Object>> getNotInMap() {
+        for(String key:inMap.keySet()) {
+            ArrayUtil.distinct(inMap.get(key));
+        }
         return notInMap;
     }
 
@@ -508,31 +514,24 @@ public class QueryCondition implements Serializable{
     /**
      * 等于列表中的某个值
      * @author jiuzhou.hu
-     * @date 2013-8-6 上午10:14:21
-     * @param key	属性名称
-     * @param value	值
-     */
-    public void in(String key, List<Object> value) {
-        if(null==inMap){
-            inMap=new HashMap<String, List<Object>>(5);
-        }
-        inMap.put(key, value);
-    }
-    /**
-     * 等于列表中的某个值
-     * @author jiuzhou.hu
      * @date 2013-8-6 上午10:14:39
      * @param key	属性名称
      * @param value	值
      */
+    @SuppressWarnings("unchecked")
     public void in(String key, Object... value) {
+        
         if(null==inMap){
             inMap=new HashMap<String, List<Object>>(5);
         }
         List<Object> list=new ArrayList<Object>();
         if(value!=null&&value.length>0){
             for(int i=0;i<value.length;i++){
-                list.add(value[i]);
+                if(value[i] instanceof List) {
+                    list.addAll((List<Object>)value[i]);
+                } else {
+                    list.add(value[i]);
+                }
             }
         }
         inMap.put(key, list);
@@ -559,6 +558,7 @@ public class QueryCondition implements Serializable{
      * @param key	属性名称
      * @param value	值
      */
+    @SuppressWarnings("unchecked")
     public void notIn(String key, Object... value) {
         if(null==notInMap){
         	notInMap = new HashMap<String, List<Object>>(5);
@@ -566,7 +566,11 @@ public class QueryCondition implements Serializable{
         List<Object> list = new ArrayList<Object>();
         if(value!=null&&value.length>0){
             for(int i=0;i<value.length;i++){
-                list.add(value[i]);
+                if(value[i] instanceof List) {
+                    list.addAll((List<Object>)value[i]);
+                } else {
+                    list.add(value[i]);
+                }
             }
         }
         notInMap.put(key, list);
