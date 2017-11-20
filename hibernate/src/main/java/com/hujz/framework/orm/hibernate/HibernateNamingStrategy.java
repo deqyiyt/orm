@@ -16,7 +16,7 @@ public class HibernateNamingStrategy extends ImprovedNamingStrategy implements N
 
     /**
      * 如果在<class>元素中没有显示设置表名，Hibernate调用该方法
-     * @author jiuzhou.hu@baozun.cn
+     * @author jiuzhou.hu
      * @date 2016年1月6日 下午6:21:56
      * @param className
      * @return
@@ -29,7 +29,7 @@ public class HibernateNamingStrategy extends ImprovedNamingStrategy implements N
 
     /**
      * 如果在<property>元素中没有显示设置字段名，Hibernate调用该方法
-     * @author jiuzhou.hu@baozun.cn
+     * @author jiuzhou.hu
      * @date 2016年1月6日 下午6:22:49
      * @param propertyName
      * @return
@@ -41,7 +41,7 @@ public class HibernateNamingStrategy extends ImprovedNamingStrategy implements N
 
     /**
      * 如果在<property>元素中显示设置了字段名，Hibernate调用该方法
-     * @author jiuzhou.hu@baozun.cn
+     * @author jiuzhou.hu
      * @date 2016年1月6日 下午6:23:02
      * @param columnName
      * @return
@@ -53,7 +53,7 @@ public class HibernateNamingStrategy extends ImprovedNamingStrategy implements N
 
     /**
      * 如果在<class>元素中显示设置了表名，Hibernate调用该方法
-     * @author jiuzhou.hu@baozun.cn
+     * @author jiuzhou.hu
      * @date 2016年1月6日 下午6:22:19
      * @param tableName
      * @return

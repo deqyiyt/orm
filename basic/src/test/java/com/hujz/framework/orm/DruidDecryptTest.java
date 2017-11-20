@@ -6,7 +6,7 @@ import com.alibaba.druid.filter.config.ConfigTools;
 /**
  *********************************************** 
  * @Create Date: 2016年1月6日 下午4:22:45
- * @Create Author: jiuzhou.hu@baozun.cn
+ * @Create Author: jiuzhou.hu
  * @File Name: DruidDecryptTest
  * @Function: druid 加密解密
  * @Last version: 1.0
