@@ -1,9 +1,9 @@
 package com.hujz.framework.orm.mybatis.test.dao;
 
 import com.hujz.framework.orm.GenericDao;
-import com.hujz.framework.orm.mybatis.test.entity.SysUser;
+import com.hujz.framework.orm.mybatis.test.entity.SystemUser;
 
-public interface SysUserDao extends GenericDao<SysUser, String>{
+public interface SysUserDao extends GenericDao<SystemUser, String>{
 	
-	SysUser selectById(String id);
+	SystemUser selectById(String id);
 }

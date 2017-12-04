@@ -7,7 +7,7 @@ import com.hujz.framework.orm.mybatis.test.entity.base.AbstractSysUser;
 
 @Entity
 @Table(name="t_sys_user")
-public class SysUser extends AbstractSysUser {
+public class SystemUser extends AbstractSysUser {
 	
 	/**
 	 * @Title serialVersionUID
@@ -16,7 +16,7 @@ public class SysUser extends AbstractSysUser {
 	 */
 	private static final long serialVersionUID = -2153494239555218571L;
 
-	public SysUser() {
+	public SystemUser() {
 		super();
 	}
 }

@@ -11,7 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.hujz.framework.orm.mybatis.test.dao.SysUserDao;
-import com.hujz.framework.orm.mybatis.test.entity.SysUser;
+import com.hujz.framework.orm.mybatis.test.entity.SystemUser;
 import com.hujz.framework.orm.mybatis.util.StringUtil;
 import com.hujz.framework.orm.util.QueryCondition;
 
@@ -31,7 +31,7 @@ public class SysUserDaoTest {
 	 */
 	@Test
 	public void selectById() {
-		SysUser user = sysUserDao.selectById(StringUtil.createSystemDataPrimaryKey());
+		SystemUser user = sysUserDao.selectById(StringUtil.createSystemDataPrimaryKey());
 		System.out.println(user);
 	}
 	
@@ -50,7 +50,7 @@ public class SysUserDaoTest {
 		cond.put("name", "张");
 		cond.orderAsc("birthday");
 		cond.orderDesc("name");
-		List<SysUser> list = sysUserDao.query(cond);
+		List<SystemUser> list = sysUserDao.query(cond);
 		Assert.assertNotNull(list);
 	}
 	
@@ -117,7 +117,7 @@ public class SysUserDaoTest {
 	 */
 	@Test
 	public void testQueryAll() {
-		List<SysUser> list = sysUserDao.queryAll();
+		List<SystemUser> list = sysUserDao.queryAll();
 		Assert.assertNull(list);
 	}
 	
@@ -129,7 +129,7 @@ public class SysUserDaoTest {
 	 */
 	@Test
 	public void testGet() {
-		SysUser user = sysUserDao.get("1");
+		SystemUser user = sysUserDao.get("1");
 		Assert.assertNull(user);
 	}
 	
@@ -163,7 +163,7 @@ public class SysUserDaoTest {
 	 */
 	@Test
 	public void testSave() {
-		SysUser user = new SysUser();
+		SystemUser user = new SystemUser();
 		user.setBirthday(new Date());
 		user.setEmail("352deqyiyt@163.com");
 		user.setGender(1);
@@ -183,7 +183,7 @@ public class SysUserDaoTest {
 	 */
 	@Test
 	public void testUpdate() {
-		SysUser user = sysUserDao.get("15");
+		SystemUser user = sysUserDao.get("15");
 		user.setName("hujz");
 		sysUserDao.update(user);
 	}
