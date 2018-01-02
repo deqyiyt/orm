@@ -16,13 +16,13 @@ import java.io.Serializable;
 public class PageTools implements Serializable{
 
 	/**
-	 * @Title serialVersionUID
-	 * @type long
-	 * @date 2015-1-21 下午8:29:00
-	 */
-	private static final long serialVersionUID = -6586839034985170593L;
+     * 
+     * @type long
+     * @date 2017年12月5日 下午6:47:10
+     */
+    private static final long serialVersionUID = -2171763424031733987L;
 
-	/** 传入：一页几行*/
+    /** 传入：一页几行*/
 	private int pageSize = 10;
 	 
 	/** 传入：开始行*/
