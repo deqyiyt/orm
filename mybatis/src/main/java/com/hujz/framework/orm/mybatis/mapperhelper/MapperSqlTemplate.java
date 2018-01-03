@@ -129,7 +129,7 @@ public abstract class MapperSqlTemplate extends MapperTemplate{
 			.append(" <if test=\"orderby != null\"> ")
 			.append(" order by ")
 			.append(" <foreach collection=\"orderby\" item=\"item\" separator=\",\" close=\"\"> ")
-			.append(" `<![CDATA[").append(String.format(field,"item.key")).append("]]>` ")
+			.append(" `").append(String.format(field,"item.key")).append("` ")
 			.append(" <if test=\"item.order == 1\"> ")
 			.append(" asc ")
 			.append(" </if> ")
