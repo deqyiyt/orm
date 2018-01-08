@@ -25,8 +25,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 
 import com.hujz.framework.orm.GenericDao;
-import com.hujz.framework.orm.mybatis.interceptor.PageInterceptor;
-import com.hujz.framework.orm.mybatis.interceptor.PerformanceInterceptor;
+import com.hujz.framework.orm.mapper.interceptor.PageInterceptor;
 
 @Configuration
 @EnableAutoConfiguration(exclude = {GenericDao.class})
@@ -74,11 +73,6 @@ public class MybatisAutoConfiguration implements TransactionManagementConfigurer
     @Override
     public PlatformTransactionManager annotationDrivenTransactionManager() {
         return new DataSourceTransactionManager(dataSource);
-    }
-    
-    @Bean
-    public PerformanceInterceptor performanceInterceptor() {
-    	return new PerformanceInterceptor();
     }
     
     @Bean

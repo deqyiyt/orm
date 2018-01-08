@@ -10,8 +10,8 @@ public class ObjectUtils extends org.springframework.util.ObjectUtils {
 	/**
 	 * 直接读取对象属性值,无视private/protected修饰符,不经过getter函数.
 	 */
-	public static Object getFieldValue(final Object object,
-			final String fieldName) {
+	public static Object getFieldValue(Object object,
+			String fieldName) {
 		Field field = getDeclaredField(object, fieldName);
 
 		if (field == null) {

@@ -6,13 +6,6 @@ import java.util.List;
 import com.hujz.framework.orm.util.QueryCondition;
 
 public interface BasicDao<T, PK extends Serializable> {
-	/**
-	 * 获取当前对象里的所有记录
-	 * @author jiuzhou.hu
-	 * @date 2014-3-24 下午2:50:42
-	 * @return
-	 */
-	List<T> queryAll();
 
 	/**
 	 * 通过ID获取对象

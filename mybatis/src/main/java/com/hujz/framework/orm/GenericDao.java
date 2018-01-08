@@ -2,8 +2,8 @@ package com.hujz.framework.orm;
 
 import java.io.Serializable;
 
-import com.hujz.framework.orm.mybatis.face.BasicMapper;
-import com.hujz.framework.orm.mybatis.face.ConditionMapper;
+import com.hujz.framework.orm.mapper.face.BasicMapper;
+import com.hujz.framework.orm.mapper.face.ConditionMapper;
 
 /**
  *********************************************** 

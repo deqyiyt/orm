@@ -1,6 +1,7 @@
 package com.hujz.framework.orm.hibernate.test.dao.impl;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.annotation.Resource;
 

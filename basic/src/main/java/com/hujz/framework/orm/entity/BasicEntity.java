@@ -8,13 +8,13 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
-import com.hujz.framework.orm.annotation.CreateTime;
-import com.hujz.framework.orm.annotation.UpdateTime;
+import tk.mybatis.mapper.annotation.Generated;
+import tk.mybatis.mapper.code.GenerationTime;
 
 /**
  *********************************************** 
@@ -45,7 +45,7 @@ public abstract class BasicEntity extends SuperEntity{
 	@GenericGenerator(name = "uuidGenerator", strategy = "com.hujz.framework.orm.hibernate.identifier.UuidGenerator")
 	@GeneratedValue(generator = "uuidGenerator")
 	*/
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(generator = "UUID")
 	@Column(length = 32, unique = true, nullable = false)
 	private String id;
 
@@ -56,7 +56,7 @@ public abstract class BasicEntity extends SuperEntity{
 	 * 含义 创建时间
 	 */
 	@Column(updatable=false)
-	@CreateTime
+	@Generated(value = GenerationTime.INSERT)
 	private Date createDt;
 
 	/**
@@ -66,7 +66,7 @@ public abstract class BasicEntity extends SuperEntity{
 	 * 含义 最后一次修改时间
 	 */
 	@Column
-	@UpdateTime
+	@Generated(value = GenerationTime.ALWAYS, type = TemporalType.TIMESTAMP)
 	private Date updateDt;
 	
 	/**

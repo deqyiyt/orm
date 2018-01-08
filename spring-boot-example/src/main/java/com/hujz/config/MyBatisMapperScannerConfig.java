@@ -7,7 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.hujz.framework.orm.GenericDao;
-import com.hujz.framework.orm.mybatis.spring.MapperScannerConfigurer;
+
+import tk.mybatis.spring.mapper.MapperScannerConfigurer;
 
 @Configuration
 @AutoConfigureAfter(MybatisAutoConfiguration.class)

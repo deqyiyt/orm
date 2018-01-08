@@ -136,5 +136,4 @@ public class PageTools implements Serializable{
 		}
 		return recordPage;
 	}
-    
 }

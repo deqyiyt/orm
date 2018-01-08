@@ -29,15 +29,20 @@
 		<persistence.api.verstion>1.0</persistence.api.verstion>
 		<slf4j.verstion>1.7.21</slf4j.verstion>
 		<logback.version>1.1.7</logback.version>
+		<mapper.verion>3.5.0-SNAPSHOT</mapper.verion>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>com.alibaba</groupId>
-				<artifactId>druid</artifactId>
-				<version>${druid.version}</version>
+				<groupId>tk.mybatis</groupId>
+                <artifactId>mapper</artifactId>
+				<version>${mapper.verion}</version>
 			</dependency>
-			
+			<dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-core</artifactId>

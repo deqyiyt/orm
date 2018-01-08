@@ -116,18 +116,6 @@ public class SysUserDaoTest{
 	}
 	
 	/**
-	 * @Method testQueryAll方法.<br>
-	 * @Description 查询整张表数据，不分页
-	 * @author jiuzhou.hu
-	 * @date 2015年9月14日 上午10:49:53
-	 */
-	@Test
-	public void testQueryAll() {
-		List<SysUser> list = sysUserDao.queryAll();
-		Assert.assertNull(list);
-	}
-	
-	/**
 	 * @Method testGet方法.<br>
 	 * @Description 根据ID查询数据
 	 * @author jiuzhou.hu

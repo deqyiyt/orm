@@ -80,20 +80,6 @@ public abstract class HibernateGenericDao<T, PK extends Serializable> implements
 	}
 
 	/**
-	 * 获取当前对象里的所有记录
-	 * @author jiuzhou.hu
-	 * @date 2014-3-24 下午2:59:33
-	 * @return List
-	 */
-	@Override
-	public List<T> queryAll() {
-		@SuppressWarnings("unchecked")
-		List<T> list = (List<T>) getHibernateTemplate().loadAll(getGenericType());
-		getHibernateTemplate().clear();
-		return list;
-	}
-
-	/**
 	 * {@inheritDoc}
 	 */
 	@Override
