@@ -5,6 +5,8 @@ import java.io.Serializable;
 import com.hujz.framework.orm.mapper.face.BasicMapper;
 import com.hujz.framework.orm.mapper.face.ConditionMapper;
 
+import tk.mybatis.mapper.common.Marker;
+
 /**
  *********************************************** 
  * @Copyright (c) by soap All right reserved.

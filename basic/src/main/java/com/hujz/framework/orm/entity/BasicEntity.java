@@ -8,6 +8,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.TemporalType;
@@ -45,7 +46,9 @@ public abstract class BasicEntity extends SuperEntity{
 	@GenericGenerator(name = "uuidGenerator", strategy = "com.hujz.framework.orm.hibernate.identifier.UuidGenerator")
 	@GeneratedValue(generator = "uuidGenerator")
 	*/
-	@GeneratedValue(generator = "UUID")
+//	@GeneratedValue(generator = "UUID")
+//	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SELECT REPLACE(UUID(),'-','')")
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "sequence")
 	@Column(length = 32, unique = true, nullable = false)
 	private String id;
 

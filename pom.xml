@@ -15,16 +15,16 @@
 	</modules>
 	<properties>
 		<orm.version>1.0.0-SNAPSHOT</orm.version>
-		<spring.version>4.2.6.RELEASE</spring.version>
+		<spring.version>4.3.7.RELEASE</spring.version>
 		<hibernate.version>4.3.2.Final</hibernate.version>
-		<druid.version>1.0.2</druid.version>
+		<druid.version>1.1.6</druid.version>
 		<mysql.version>5.1.8</mysql.version>
 		<junit.version>4.12</junit.version>
 		<commons.codec.version>1.7</commons.codec.version>
 		<aspectjweaver.version>1.7.0</aspectjweaver.version>
 		<javassist.version>3.18.1-GA</javassist.version>
 		<mybatis.spring.version>1.2.0</mybatis.spring.version>
-		<mybatis.version>3.2.8</mybatis.version>
+		<mybatis.version>3.4.2</mybatis.version>
 		<validation.api.version>1.1.0.Final</validation.api.version>
 		<persistence.api.verstion>1.0</persistence.api.verstion>
 		<slf4j.verstion>1.7.21</slf4j.verstion>
