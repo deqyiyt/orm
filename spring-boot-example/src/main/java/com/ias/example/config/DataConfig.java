@@ -13,8 +13,8 @@ import com.hujz.framework.orm.mapper.interceptor.PageInterceptor;
 @Configuration
 @EnableTransactionManagement
 @PropertySources({
-    @PropertySource("classpath:config/ias-component-mybatis.properties"),
-    @PropertySource(value = "file:/ias/config/ias-component-mybatis.properties", ignoreResourceNotFound = true)
+    @PropertySource("classpath:config/ias-example-boot.properties"),
+    @PropertySource(value = "file:/ias/config/ias-example-boot.properties", ignoreResourceNotFound = true)
 })
 @MapperScan(value = {"com.ias.**.dao"})
 public class DataConfig {
