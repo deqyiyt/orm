@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.hujz.framework.module</groupId>
 		<artifactId>orm</artifactId>
-	    <version>1.0.0-SNAPSHOT</version> 
+	    <version>1.0.1.RELEASE</version>
 	</parent>
 	<groupId>com.hujz.framework.module.orm</groupId>
 	<artifactId>orm-basic</artifactId>
@@ -41,6 +41,15 @@
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper</artifactId>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>ias.framework.common</groupId>
+            <artifactId>ias-common-utils</artifactId>
         </dependency>
  	</dependencies>
 </project>

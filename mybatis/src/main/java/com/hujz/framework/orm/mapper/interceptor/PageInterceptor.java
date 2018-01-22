@@ -47,8 +47,8 @@ import org.apache.ibatis.session.RowBounds;
 import com.hujz.framework.orm.bean.PageTools;
 import com.hujz.framework.orm.mapper.parser.SqlParser;
 import com.hujz.framework.orm.mapper.parser.SqlServer;
-import com.hujz.framework.orm.util.ObjectUtils;
 import com.hujz.framework.orm.util.QueryCondition;
+import com.ias.common.utils.bean.ClassUtil;
 
 /**
  * QueryInterceptor 规范
@@ -106,7 +106,7 @@ public class PageInterceptor implements Interceptor {
             // 获取分页Sql语句
             String pageSql = this.getPageSql(pageTools, sql);
             // 利用反射设置当前BoundSql对应的sql属性为我们建立好的分页Sql语句
-            ObjectUtils.setFieldValue(boundSql, "sql", pageSql);
+            ClassUtil.setFieldValue(boundSql, "sql", pageSql);
             return executor.query(ms, parameter, rowBounds, resultHandler, cacheKey, boundSql);
         }
         //注：下面的方法可以根据自己的逻辑调用多次，在分页插件中，count 和 page 各调用了一次

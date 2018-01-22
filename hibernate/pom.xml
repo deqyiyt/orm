@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.hujz.framework.module</groupId>
 		<artifactId>orm</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+		<version>1.0.1.RELEASE</version>
 	</parent> 
 	<groupId>com.hujz.framework.module.orm</groupId>
 	<artifactId>orm-hibernate</artifactId>
@@ -27,7 +27,8 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<scope>test</scope>
+			<scope>compile</scope>
+            <optional>true</optional>
 		</dependency>
 	
 		<!-- Hibernate/JPA -->
@@ -38,6 +39,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-ehcache</artifactId>
+			<version>4.3.2.Final</version>
 		</dependency>
 
 		<dependency>

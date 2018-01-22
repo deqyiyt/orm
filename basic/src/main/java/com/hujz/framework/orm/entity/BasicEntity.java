@@ -69,7 +69,7 @@ public abstract class BasicEntity extends SuperEntity{
 	 * 含义 最后一次修改时间
 	 */
 	@Column
-	@Generated(value = GenerationTime.ALWAYS, type = TemporalType.TIMESTAMP)
+	@Generated(value = GenerationTime.NEVER)
 	private Date updateDt;
 	
 	/**

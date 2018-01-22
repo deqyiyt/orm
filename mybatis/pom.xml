@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.hujz.framework.module</groupId>
 		<artifactId>orm</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+		<version>1.0.1.RELEASE</version>
 	</parent>
 	<groupId>com.hujz.framework.module.orm</groupId>
 	<artifactId>orm-mybatis</artifactId>
@@ -25,7 +25,6 @@
         <dependency>
             <groupId>com.github.jsqlparser</groupId>
             <artifactId>jsqlparser</artifactId> 
-            <version>0.9.4</version>
         </dependency>
         <!--可选依赖-->
         <!-- <dependency>

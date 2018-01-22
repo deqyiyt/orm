@@ -12,16 +12,17 @@ import org.hibernate.Session;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.metadata.ClassMetadata;
 import org.hibernate.type.Type;
+import org.springframework.util.ObjectUtils;
 
 import com.hujz.framework.orm.bean.OrderEntry;
 import com.hujz.framework.orm.bean.PageTools;
 import com.hujz.framework.orm.bean.QueryPropert;
 import com.hujz.framework.orm.hibernate.query.QueryUtil;
-import com.hujz.framework.orm.util.ObjectUtils;
 import com.hujz.framework.orm.util.QueryCondition;
 import com.hujz.framework.orm.util.QueryResult;
-import com.hujz.framework.orm.util.RandomUtils;
-import com.hujz.framework.orm.util.StringUtils;
+import com.ias.common.utils.bean.ClassUtil;
+import com.ias.common.utils.random.RandomUtils;
+import com.ias.common.utils.string.StringUtil;
 
 /**
  *********************************************** 
@@ -48,7 +49,7 @@ public class HibernateHelper {
     	String hql = buildUpdateHql(metadata, qc);
         String condition = QueryUtil.buildConditionByQueryCondition(metadata, qc).toString();
         
-        if(StringUtils.isNotEmpty(condition) && condition.length() > 0) {
+        if(StringUtil.isNotEmpty(condition) && condition.length() > 0) {
             hql += " where 1 = 1 ";
             hql += condition;
         }
@@ -78,7 +79,7 @@ public class HibernateHelper {
     	String hql = buildDeleteHql(metadata);
         String condition = QueryUtil.buildConditionByQueryCondition(metadata, qc).toString();
         
-        if(StringUtils.isNotEmpty(condition) && condition.length() > 0) {
+        if(StringUtil.isNotEmpty(condition) && condition.length() > 0) {
             hql += " where 1 = 1 ";
             hql += condition;
         }
@@ -138,7 +139,7 @@ public class HibernateHelper {
     public static final void selectHqlByQueryCondition(Session session,
     		ClassMetadata metadata, QueryCondition qc, List qr)
             throws HibernateException {
-    	String alias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
+    	String alias = ClassUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
         // 获取组合的条件
         String condition = QueryUtil.buildConditionByQueryCondition(metadata, qc).toString();
         StringBuffer hql = new StringBuffer(buildQueryHql(metadata, condition));
@@ -200,7 +201,7 @@ public class HibernateHelper {
     public static final Long selectHqlByQueryCountCondition(Session session,
     		ClassMetadata metadata, QueryCondition qc)
             throws HibernateException {
-    	String alias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
+    	String alias = ClassUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
         // 获取组合的条件
         String condition = QueryUtil.buildConditionByQueryCondition(metadata, qc).toString();
         
@@ -260,11 +261,11 @@ public class HibernateHelper {
         Map<String, Object> batchUpdateMap = qc.getBatchUpdateMap();
         int i = 0;
         if(null != batchUpdateMap && batchUpdateMap.size() > 0) {
-        	String objectAlias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
+        	String objectAlias = ClassUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
             hql.append("update ");
             hql.append(metadata.getEntityName());
             hql.append(" as ");
-            hql.append(ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase());
+            hql.append(ClassUtil.getBaseClassName(metadata.getEntityName()).toLowerCase());
             hql.append(" set ");
             for(Iterator<Map.Entry<String, Object>> it = batchUpdateMap
                     .entrySet().iterator(); it.hasNext();) {
@@ -297,7 +298,7 @@ public class HibernateHelper {
      * @return
      */
     private static final String buildDeleteHql(ClassMetadata metadata) {
-    	String objectAlias = ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase();
+    	String objectAlias = ClassUtil.getBaseClassName(metadata.getEntityName()).toLowerCase();
         StringBuilder hql = new StringBuilder();
         hql.append("delete ");
         hql.append(metadata.getEntityName());
@@ -321,8 +322,8 @@ public class HibernateHelper {
         hql.append(" from ");
         hql.append(metadata.getEntityName());
         hql.append(" as ");
-        hql.append(ObjectUtils.getBaseClassName(metadata.getEntityName()).toLowerCase());
-        if(StringUtils.isNotEmpty(condition) && condition.length() > 0) {
+        hql.append(ClassUtil.getBaseClassName(metadata.getEntityName()).toLowerCase());
+        if(StringUtil.isNotEmpty(condition) && condition.length() > 0) {
             hql.append(" where 1 = 1 ").append(condition);
         }
 
@@ -345,7 +346,7 @@ public class HibernateHelper {
             for(int i = 0; i < orderList.size(); i++) {
                 OrderEntry orderEntry = (OrderEntry)orderList.get(i);
                 String orderKey = (String)orderEntry.getKey();
-                if(StringUtils.isEmpty(orderKey)) {
+                if(StringUtil.isEmpty(orderKey)) {
                     continue;
                 }
                 if(i > 0) {

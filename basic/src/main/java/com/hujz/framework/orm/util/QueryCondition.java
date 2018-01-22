@@ -11,6 +11,9 @@ import javax.persistence.Query;
 import com.hujz.framework.orm.bean.OrderEntry;
 import com.hujz.framework.orm.bean.PageTools;
 import com.hujz.framework.orm.bean.QueryPropert;
+import com.ias.common.utils.collection.ArrayUtils;
+import com.ias.common.utils.encrypt.Base64Util;
+import com.ias.common.utils.serializable.SerializableUtil;
 
 /**
  *********************************************** 
@@ -343,7 +346,7 @@ public class QueryCondition implements Serializable{
     public Map<String, List<Object>> getInMap() {
         if(inMap != null) {
             for(String key:inMap.keySet()) {
-                ArrayUtil.distinct(inMap.get(key));
+                ArrayUtils.distinct(inMap.get(key));
             }
         }
         return inMap;
@@ -357,7 +360,7 @@ public class QueryCondition implements Serializable{
     public Map<String, List<Object>> getNotInMap() {
         if(inMap != null) {
             for(String key:inMap.keySet()) {
-                ArrayUtil.distinct(inMap.get(key));
+                ArrayUtils.distinct(inMap.get(key));
             }
         }
         return notInMap;
@@ -916,6 +919,6 @@ public class QueryCondition implements Serializable{
 		return curPage;
 	}
 	public String cacheKey() {
-		return Md5Utils.md5(SerializableUtil.convert2String(this).getBytes());
+		return Base64Util.encode(SerializableUtil.convert2String(this).getBytes());
 	}
 }

@@ -13,8 +13,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.hujz.framework.orm.hibernate.test.dao.SysUserDao;
 import com.hujz.framework.orm.hibernate.test.entity.SysUser;
 import com.hujz.framework.orm.util.QueryCondition;
-import com.hujz.framework.orm.util.RandomUtils;
-import com.hujz.framework.orm.util.TimeUtils;
+import com.ias.common.utils.date.TimeUtil;
+import com.ias.common.utils.random.RandomUtils;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -52,7 +52,7 @@ public class SysUserDaoTest {
 	@Test
 	public void testQueryCount() {
 		QueryCondition cond = new QueryCondition();
-		cond.less("birthday", TimeUtils.toCalendar("2015-03-16 22:44:39").getTime());
+		cond.less("birthday", TimeUtil.toCalendar("2015-03-16 22:44:39").getTime());
 		cond.greate("birthday", "1991-02-21 19:52:21");
 		System.out.println(sysUserDao.queryCount(cond));
 	}
@@ -66,7 +66,7 @@ public class SysUserDaoTest {
 	@Test
 	public void testIsUnique() {
 		QueryCondition cond = new QueryCondition();
-		cond.less("birthday", TimeUtils.toCalendar("2015-03-16 22:44:39").getTime());
+		cond.less("birthday", TimeUtil.toCalendar("2015-03-16 22:44:39").getTime());
 		cond.greate("birthday", "1991-02-21 19:52:21");
 		System.out.println(sysUserDao.isUnique(cond));
 	}
