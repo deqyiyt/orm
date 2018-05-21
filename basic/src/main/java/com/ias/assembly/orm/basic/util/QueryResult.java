@@ -78,6 +78,14 @@ public class QueryResult<T extends RowsEntry> implements Serializable, Iterable<
 	 * @return List<T>
 	 */
 	public List<T> getRows() {
+		if(this.getPageTools() != null) {
+			int pageNo = this.getPageTools().getPageNo() - 1;
+			int pageSize = this.getPageTools().getPageSize();
+			for(int i = 0; i < this.rows.size(); i++) {
+				T entity = this.rows.get(i);
+				entity.setRowsNo(pageNo * pageSize + i + 1);
+			}
+		}
 		return rows;
 	}
 
@@ -153,6 +161,7 @@ public class QueryResult<T extends RowsEntry> implements Serializable, Iterable<
 		return this.getRows().remove(o);
 	}
 
+	@SuppressWarnings("unlikely-arg-type")
 	public boolean containsAll(Collection<T> c) {
 		return this.getRows().remove(c);
 	}
