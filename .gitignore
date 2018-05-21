@@ -1,18 +1,40 @@
-#folder
-/.idea
-/out
-**/target/
-**/.settings/
-**/.classpath
-**/.project
+# Compiled class file
+*.class
 
-#file
-#.gitignore
-*.log*
-*.iml
+# Log file
+*.log
 
-/api/ias-api-quene-wg/src/main/resources/application-dev.properties
-/api/ias-api-quene-wg/src/main/resources/application.properties
-/api/ias-api-quene-wg/src/main/resources/application-prod.properties
-/api/ias-api-quene-wg/src/main/resources/application-emulation.properties
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+*.classpath
+*.project
+*.svn
+.gitignore
+.factorypath
+.settings
+.springBeans
+.classpath
+.project
+.git.bak
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+/bin/
+/target/
+target/
+build/
+/.classpath
+/.project
+/.settings/
 
