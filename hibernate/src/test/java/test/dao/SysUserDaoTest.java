@@ -10,9 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.hujz.framework.orm.hibernate.test.dao.SysUserDao;
-import com.hujz.framework.orm.hibernate.test.entity.SysUser;
-import com.hujz.framework.orm.util.QueryCondition;
+import com.ias.assembly.orm.basic.util.QueryCondition;
+import com.ias.assembly.orm.hibernate.test.dao.SysUserDao;
+import com.ias.assembly.orm.hibernate.test.entity.SysUser;
 import com.ias.common.utils.date.TimeUtil;
 import com.ias.common.utils.random.RandomUtils;
 

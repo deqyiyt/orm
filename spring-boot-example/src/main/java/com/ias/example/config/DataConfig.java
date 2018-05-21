@@ -7,7 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.hujz.framework.orm.mapper.interceptor.PageInterceptor;
+import com.ias.assembly.orm.mybatis.interceptor.PageInterceptor;
 
 
 @Configuration

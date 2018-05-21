@@ -24,7 +24,7 @@
 
 package com.ias.example.boot.dao;
 
-import com.hujz.framework.orm.GenericDao;
+import com.ias.assembly.orm.GenericDao;
 import com.ias.example.boot.entity.User;
 
 public interface UserDao extends GenericDao<User, Long> {

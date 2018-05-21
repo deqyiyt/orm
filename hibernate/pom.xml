@@ -4,13 +4,13 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.hujz.framework.module</groupId>
-		<artifactId>orm</artifactId>
-		<version>1.0.1.RELEASE</version>
+		<groupId>ias.framework.assembly</groupId>
+		<artifactId>ias-assembly-orm</artifactId>
+		<version>1.1.0-SNAPSHOT</version>
 	</parent> 
-	<groupId>com.hujz.framework.module.orm</groupId>
-	<artifactId>orm-hibernate</artifactId>
-	<name>Framework Hibernate</name>
+	<groupId>ias.framework.assembly.orm</groupId>
+	<artifactId>ias-assembly-orm-hibernate</artifactId>
+	<name>ORM Hibernate</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<!-- Test -->
@@ -73,8 +73,8 @@
 
 		<!--集成其它组件 -->
 		<dependency>
-			<groupId>com.hujz.framework.module.orm</groupId>
-			<artifactId>orm-basic</artifactId>
+			<groupId>ias.framework.assembly.orm</groupId>
+			<artifactId>ias-assembly-orm-basic</artifactId>
 		</dependency>
 	</dependencies>
 </project>

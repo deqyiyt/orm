@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.hujz.framework.orm.util.QueryCondition;
+import com.ias.assembly.orm.basic.util.QueryCondition;
 import com.ias.example.TestApplication;
 import com.ias.example.boot.dao.UserDao;
 import com.ias.example.boot.entity.User;
