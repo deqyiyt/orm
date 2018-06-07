@@ -72,7 +72,8 @@ public class PageInterceptor implements Interceptor {
     private String databaseType;// 数据库类型，不同的数据库有不同的分页方法
     private String regEx;// mapper.xml中需要拦截的ID(正则匹配)
 
-    @Override
+    @SuppressWarnings("rawtypes")
+	@Override
     public Object intercept(Invocation invocation) throws Throwable {
         Object[] args = invocation.getArgs();
         MappedStatement ms = (MappedStatement) args[0];

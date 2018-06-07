@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.ias.**.config"})
+@ComponentScan(basePackages = {"com.ias.**.config", "com.ias.example.boot"})
 public class TestApplication implements CommandLineRunner {
     private Logger logger = LoggerFactory.getLogger(TestApplication.class);
 
